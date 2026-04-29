@@ -11,18 +11,18 @@
 <meta name="author" content="Anton Zinoviev">
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#1DB954">
-<link rel="canonical" href="https://test.spotifyedits.com/">
-<link rel="alternate" hreflang="en" href="https://test.spotifyedits.com/">
-<link rel="alternate" hreflang="x-default" href="https://test.spotifyedits.com/">
+<link rel="canonical" href="https://test2.spotifyedits.com/">
+<link rel="alternate" hreflang="en" href="https://test2.spotifyedits.com/">
+<link rel="alternate" hreflang="x-default" href="https://test2.spotifyedits.com/">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Free Canvas Maker for Spotify Artists — No Signup, No Watermark">
 <meta property="og:description" content="Free browser tool for Spotify artists: 9:16 Canvas MP4, Header, Avatar, Cover Art. No signup, no watermark, files stay on your device.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://test.spotifyedits.com/">
+<meta property="og:url" content="https://test2.spotifyedits.com/">
 <meta property="og:site_name" content="spotifyedits.com">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://test.spotifyedits.com/og.jpg">
+<meta property="og:image" content="https://test2.spotifyedits.com/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
@@ -30,16 +30,13 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Free Canvas Maker for Spotify Artists">
 <meta name="twitter:description" content="Free browser tool for Spotify artists. No signup, no watermark.">
-<meta name="twitter:image" content="https://test.spotifyedits.com/og.jpg">
+<meta name="twitter:image" content="https://test2.spotifyedits.com/og.jpg">
 
 <!-- Favicon -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%231DB954'/></svg>">
 
-<!-- Manrope display + body, system mono fallback -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<style>:root{--fs-system:'Manrope',system-ui,-apple-system,"Segoe UI",sans-serif;--fs-serif:'Manrope',system-ui,sans-serif;--fs-mono:ui-monospace,SFMono-Regular,Menlo,Monaco,"Cascadia Mono","Roboto Mono",Consolas,monospace}</style>
+<!-- System fonts only — zero external font requests, instant load anywhere -->
+<style>:root{--fs-system:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;--fs-serif:Georgia,"Times New Roman",serif;--fs-mono:ui-monospace,SFMono-Regular,Menlo,Monaco,"Cascadia Mono","Roboto Mono",Consolas,monospace}</style>
 
 <!-- Structured data: WebSite (potential sitelinks search box) -->
 <script type="application/ld+json">
@@ -48,7 +45,7 @@
   "@type": "WebSite",
   "name": "spotifyedits.com",
   "alternateName": "Canvas Maker for Spotify Artists",
-  "url": "https://test.spotifyedits.com/",
+  "url": "https://test2.spotifyedits.com/",
   "description": "Free Spotify Canvas maker, plus Header, Avatar and Cover Art tools. Browser-only, no signup, no watermark.",
   "inLanguage": "en"
 }
@@ -60,8 +57,8 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://test.spotifyedits.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Canvas Maker for Spotify Artists", "item": "https://test.spotifyedits.com/" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://test2.spotifyedits.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Canvas Maker for Spotify Artists", "item": "https://test2.spotifyedits.com/" }
   ]
 }
 </script>
@@ -74,7 +71,7 @@
   "name": "Canvas Maker for Spotify Artists",
   "alternateName": ["Canvas Generator for Spotify", "Canvas Creator for Spotify", "Canvas Tool for Spotify Artists"],
   "description": "Free browser-based Spotify Canvas maker for artists. Generates a 9:16 MP4 (1080×1920, 3–8 sec) with seamless loop crossfade. Also exports Spotify Header (2660×1140), Avatar (750×750), and Cover Art (3000×3000) at exact Spotify specs. No signup, no watermark, runs locally.",
-  "url": "https://test.spotifyedits.com/",
+  "url": "https://test2.spotifyedits.com/",
   "applicationCategory": "MultimediaApplication",
   "applicationSubCategory": "Video Editor",
   "operatingSystem": "Any (Web Browser — Chrome 94+, Edge 94+, Safari 16.4+)",
@@ -112,7 +109,7 @@
   "publisher": {
     "@type": "Organization",
     "name": "spotifyedits.com",
-    "url": "https://test.spotifyedits.com/"
+    "url": "https://test2.spotifyedits.com/"
   }
 }
 </script>
@@ -296,584 +293,542 @@
 </script>
 
 <style>
-/* === SpotifyEdits v8 (Manus design) — verbatim from /Downloads/spotifyedits-redesign/client/src/index.css === */
-:root {
-  --radius: 0.9rem;
-  --background: oklch(0.982 0.009 86);
-  --foreground: oklch(0.205 0.018 105);
-  --card: oklch(0.997 0.004 86);
-  --primary: oklch(0.64 0.18 145);
-  --warm: oklch(0.982 0.009 86);
-  --warm-panel: oklch(0.997 0.004 86);
-  --warm-soft: oklch(0.956 0.014 86);
-  --warm-line: oklch(0.855 0.012 86);
-  --graphite: oklch(0.205 0.018 105);
-  --graphite-soft: oklch(0.49 0.018 105);
-  --graphite-faint: oklch(0.62 0.016 105);
-  --green: oklch(0.64 0.18 145);
-  --green-deep: oklch(0.36 0.12 145);
-  --green-soft: oklch(0.91 0.048 145);
-  --green-line: oklch(0.75 0.12 145);
-  --amber-soft: oklch(0.94 0.075 78);
-  --shadow-soft: 0 24px 70px oklch(0.28 0.024 86 / 0.10);
-  --shadow-small: 0 12px 34px oklch(0.28 0.024 86 / 0.08);
+:root{
+  --bg:#FAFAF8;--card:#fff;--card2:#F5F4F0;
+  --border:#E6E3DC;--border2:#D4D0C8;
+  --text:#1C1B18;--text2:#4A4842;--text3:#6E6C66;--text4:#9C9A92;
+  --green:#1DB954;--green2:#1AA64B;--green-text:#0E7A36;--green-bg:#EEFBF2;--green-border:#C8F0D4;
+  --red:#D94040;--red-bg:#FFF5F5;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.04);
+  --shadow:0 1px 3px rgba(0,0,0,.04),0 8px 20px rgba(0,0,0,.03);
+  --shadow-lg:0 4px 16px rgba(0,0,0,.06),0 20px 50px rgba(0,0,0,.05);
+  --r:12px;--r-sm:8px;--r-lg:16px;
+  --sans:var(--fs-system);
+  --serif:var(--fs-serif);
+  --mono:var(--fs-mono);
 }
-*{margin:0;padding:0;box-sizing:border-box;border-color:var(--warm-line)}
+*{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--warm);color:var(--graphite);min-width:320px;font-family:'Manrope',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-rendering:geometricPrecision;font-feature-settings:"ss01","ss02"}
-button{font:inherit;border:0;background:transparent;color:inherit;cursor:pointer}
-a{color:inherit;text-decoration:none;cursor:pointer}
-.hidden{display:none!important}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
-.site-shell{min-height:100vh;overflow:hidden;background:linear-gradient(180deg,oklch(1 0.003 86 / 0.9),transparent 28rem),radial-gradient(circle at 84% 10%,oklch(0.91 0.048 145 / 0.34),transparent 26rem),radial-gradient(circle at 8% 36%,oklch(0.94 0.075 78 / 0.24),transparent 24rem),var(--warm)}
+/* ============ HERO ============ */
+.hero{max-width:800px;margin:0 auto;padding:48px 24px 0;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--green-bg);border:1px solid var(--green-border);color:var(--green-text);font-family:var(--mono);font-size:11px;font-weight:500;padding:5px 14px;border-radius:20px;margin-bottom:20px;letter-spacing:.3px}
+.hero-badge .dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:var(--serif);font-size:clamp(32px,6vw,52px);font-weight:700;line-height:1.1;letter-spacing:-.5px;margin-bottom:14px;font-optical-sizing:auto}
+.hero h1 em{font-style:italic;color:var(--green-text)}
+.hero .sub{font-size:16px;color:var(--text2);line-height:1.5;max-width:500px;margin:0 auto 12px}
+.by-link{display:inline-block;font-size:12px;color:var(--text3);text-decoration:none;margin-bottom:24px;transition:color .15s}
+.by-link b{font-weight:500;color:var(--text2)}
+.by-link:hover{color:var(--green)}
+.by-link:hover b{color:var(--green)}
 
-.topbar,.intro-section,.workspace-shell,.section,.privacy-section,.footer{width:min(1180px,calc(100% - 32px));margin-inline:auto}
-
-.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:22px 0 16px}
-
-.brand,.nav-cta,.small-link,.primary-action,.secondary-action,.ghost-action,.format-tab,.guide-card,.step-card,.faq-card,.footer a,.dropzone,.mood-grid button{transition:transform 180ms ease,border-color 180ms ease,background 180ms ease,box-shadow 180ms ease,color 180ms ease,opacity 180ms ease}
-
-.brand{display:inline-flex;align-items:center;gap:0.62rem;color:var(--graphite);font-weight:850;letter-spacing:-0.035em}
-.brand-mark,.format-icon,.upload-icon,.context-icon,.player-cover{display:inline-flex;flex:0 0 auto;align-items:center;justify-content:center;border:1px solid var(--warm-line);background:var(--warm-panel);color:var(--green-deep)}
-.brand-mark{width:34px;height:34px;border-radius:12px}
-
-.nav-links{display:flex;align-items:center;gap:0.1rem;padding:0.28rem;border:1px solid var(--warm-line);border-radius:999px;background:oklch(1 0.003 86 / 0.76);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
-.nav-links a,.nav-cta,.small-link{font-size:0.85rem;font-weight:780}
-.nav-links a{border-radius:999px;padding:0.54rem 0.86rem;color:var(--graphite-soft)}
-.nav-links a:hover,.footer a:hover{background:var(--warm-soft);color:var(--graphite)}
-
-.nav-cta,.primary-action{display:inline-flex;align-items:center;justify-content:center;gap:0.55rem;border:1px solid oklch(0.49 0.16 145);border-radius:999px;background:var(--graphite);color:oklch(0.99 0.005 86)}
-.nav-cta{padding:0.72rem 1rem}
-.primary-action{padding:0.85rem 1.1rem;font-weight:830}
-.secondary-action,.ghost-action,.small-link{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;border-radius:999px;font-weight:820}
-.secondary-action{border:1px solid var(--green-line);background:var(--green-soft);color:var(--green-deep);padding:0.82rem 1rem}
-.ghost-action,.small-link{border:1px solid var(--warm-line);background:oklch(1 0.003 86 / 0.72);color:var(--graphite);padding:0.82rem 1rem}
-.nav-cta:hover,.primary-action:hover,.secondary-action:hover,.ghost-action:hover,.small-link:hover,.format-tab:hover,.guide-card:hover,.faq-card:hover,.footer a:hover,.dropzone:hover,.mood-grid button:hover{transform:translateY(-2px)}
-
-.intro-section{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(1.5rem,5vw,4rem);align-items:end;padding:clamp(38px,7vw,72px) 0 24px}
-.intro-copy{max-width:860px}
-.eyebrow,.panel-label{display:inline-flex;align-items:center;gap:0.4rem;margin:0 0 0.85rem;color:var(--green-deep);font-size:0.76rem;font-weight:820;letter-spacing:0.08em;text-transform:uppercase}
-
-.intro-copy h1,.workspace-head h2,.section-heading h2,.privacy-section h2,.creator-copy h2{margin:0;color:var(--graphite);letter-spacing:-0.052em;line-height:0.99}
-.intro-copy h1{max-width:940px;font-size:clamp(2.55rem,5.9vw,5.35rem);font-weight:860}
-
-.intro-lede,.section-heading p,.privacy-section p,.creator-copy p{color:var(--graphite-soft);font-weight:560;line-height:1.68}
-.intro-lede{max-width:780px;margin:1.35rem 0 0;font-size:clamp(1.05rem,1.6vw,1.22rem)}
-
-.intro-notes{display:grid;gap:0.6rem;min-width:190px;padding:1rem;border:1px solid var(--warm-line);border-radius:22px;background:oklch(1 0.003 86 / 0.76);box-shadow:var(--shadow-small)}
-.intro-notes span,.checklist span,.privacy-list span{display:inline-flex;align-items:center;gap:0.45rem;color:var(--graphite);font-size:0.88rem;font-weight:760}
-
-.workspace-shell{margin-top:clamp(1.4rem,3vw,2.4rem);padding:clamp(1rem,2vw,1.25rem);border:1px solid var(--warm-line);border-radius:34px;background:oklch(1 0.003 86 / 0.84);box-shadow:var(--shadow-soft)}
-.workspace-head,.section-heading,.creator-copy{display:flex;flex-direction:column;gap:0.75rem}
-.workspace-head{flex-direction:row;align-items:start;justify-content:space-between;gap:1rem;padding:0.4rem 0.25rem 1rem}
-.workspace-head h2,.section-heading h2,.creator-copy h2,.privacy-section h2{font-size:clamp(2rem,4vw,3.55rem);font-weight:850}
-
-.format-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0.72rem;margin-bottom:0.8rem}
-.format-tab{display:flex;align-items:center;gap:0.72rem;padding:0.9rem;border:1px solid var(--warm-line);border-radius:19px;background:var(--warm-panel);color:var(--graphite);text-align:left}
-.format-tab.is-active{border-color:var(--green-line);background:linear-gradient(135deg,var(--green-soft),oklch(1 0.003 86));box-shadow:inset 0 0 0 1px oklch(1 0 0 / 0.55),var(--shadow-small)}
-.format-icon{width:34px;height:34px;border-radius:12px}
-.format-tab strong{display:block;font-size:0.95rem;font-weight:860}
-.format-tab small{display:block;margin-top:0.15rem;color:var(--graphite-soft);font-size:0.76rem;font-weight:720}
-
-.spec-strip{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:1px;overflow:hidden;border:1px solid var(--warm-line);border-radius:18px;background:var(--warm-line)}
-.spec-strip span{padding:0.9rem 1rem;background:oklch(0.986 0.006 86);color:var(--graphite-soft);font-size:0.86rem;font-weight:760}
-.spec-strip strong{color:var(--graphite)}
-
-.workspace-grid{display:grid;grid-template-columns:minmax(0,0.95fr) minmax(360px,1.05fr);gap:1rem;margin-top:1rem}
-
-.input-panel,.preview-panel,.pexels-card,.player-card,.specs-table,.guide-card,.faq-card,.export-card{border:1px solid var(--warm-line);background:var(--warm-panel);box-shadow:var(--shadow-small)}
-.input-panel,.preview-panel{border-radius:28px;padding:clamp(1rem,2vw,1.2rem)}
-.input-panel{display:grid;gap:0.9rem}
-
-.selected-context{display:flex;gap:0.85rem;align-items:start;padding:1rem;border:1px solid var(--warm-line);border-radius:22px;background:var(--warm-soft)}
-.context-icon,.upload-icon{width:38px;height:38px;border-radius:14px}
-.selected-context h3,.export-card h3{margin:0;color:var(--graphite);font-size:1.05rem;font-weight:850;letter-spacing:-0.025em}
-.selected-context p,.export-card p{margin:0.35rem 0 0;color:var(--graphite-soft);line-height:1.6;font-size:0.92rem}
-
-.dropzone{display:grid;place-items:center;min-height:214px;padding:1.2rem;border:1.5px dashed var(--green-line);border-radius:26px;background:linear-gradient(135deg,oklch(0.91 0.048 145 / 0.34),transparent),var(--warm-panel);text-align:center;cursor:pointer}
-.dropzone input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
-.dropzone strong{margin-top:0.8rem;color:var(--graphite);font-weight:860}
-.dropzone small{color:var(--graphite-soft);font-size:0.78rem;font-weight:720}
-.dropzone em{margin-top:0.5rem;color:var(--green-deep);font-size:0.78rem;font-style:normal;font-weight:820}
-
-.source-actions{display:flex;flex-wrap:wrap;gap:0.65rem}
-.export-card{border-radius:24px;padding:1rem}
-.export-card .primary-action{margin-top:1rem;width:100%}
-
-.panel-topline{display:flex;justify-content:space-between;align-items:start;gap:1rem}
-.panel-topline h2{margin:0;color:var(--graphite);font-size:1.35rem;font-weight:850;letter-spacing:-0.035em}
-.status-pill{display:inline-flex;align-items:center;gap:0.42rem;padding:0.5rem 0.66rem;border:1px solid var(--green-line);border-radius:999px;background:var(--green-soft);color:var(--green-deep);font-size:0.78rem;font-weight:850}
-
-.device-stage{display:grid;place-items:center;min-height:430px;margin:1rem 0;border:1px solid var(--warm-line);border-radius:26px;background:linear-gradient(135deg,oklch(0.205 0.018 105 / 0.03),transparent),var(--warm-soft)}
-.preview-frame{position:relative;display:grid;place-items:center;overflow:hidden;border:1px solid oklch(0.205 0.018 105 / 0.16);background:linear-gradient(140deg,oklch(0.28 0.035 105),oklch(0.18 0.018 105)),var(--graphite);color:white;box-shadow:0 24px 70px oklch(0.2 0.02 105 / 0.22)}
-.preview-frame--canvas{width:190px;height:338px;border-radius:30px}
-.preview-frame--header{width:min(430px,92%);height:184px;border-radius:24px}
-.preview-frame--avatar{width:260px;height:260px;border-radius:34px}
-.preview-frame--cover{width:280px;height:280px;border-radius:26px}
-.preview-grid{position:absolute;inset:0;opacity:0.2;background-image:linear-gradient(white 1px,transparent 1px),linear-gradient(90deg,white 1px,transparent 1px);background-size:32px 32px}
-.preview-content{position:relative;z-index:2;display:grid;gap:0.25rem;text-align:center;text-shadow:0 2px 18px oklch(0 0 0 / 0.28)}
-.preview-content span{font-size:0.74rem;font-weight:780;opacity:0.74;text-transform:uppercase;letter-spacing:0.12em}
-.preview-content strong{font-size:1.45rem;font-weight:880;letter-spacing:-0.055em}
-.phone-bar{position:absolute;top:12px;z-index:3;width:46px;height:5px;border-radius:999px;background:oklch(1 0 0 / 0.46)}
-.circle-guide{position:absolute;inset:9%;z-index:3;border:1px dashed oklch(1 0 0 / 0.62);border-radius:50%}
-.safe-area{position:absolute;left:14px;bottom:14px;z-index:3;padding:0.34rem 0.48rem;border:1px solid oklch(1 0 0 / 0.42);border-radius:999px;color:white;font-size:0.63rem;font-weight:780}
-
-.export-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0.65rem}
-.export-summary div{padding:0.75rem;border:1px solid var(--warm-line);border-radius:16px;background:var(--warm-soft)}
-.export-summary span{display:block;color:var(--graphite-soft);font-size:0.7rem;font-weight:780;text-transform:uppercase;letter-spacing:0.08em}
-.export-summary strong{display:block;margin-top:0.2rem;color:var(--graphite);font-size:0.82rem;font-weight:850}
-
-.checklist{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.8rem}
-.checklist span{padding:0.54rem 0.65rem;border:1px solid var(--warm-line);border-radius:999px;background:var(--warm-soft)}
-
-.section{padding:clamp(68px,8vw,108px) 0 0}
-.split-section,.creator-section{display:grid;grid-template-columns:minmax(0,0.86fr) minmax(360px,1.14fr);gap:clamp(1rem,4vw,3rem);align-items:center}
-.section-heading p{max-width:720px;margin:0;font-size:1rem}
-
-.pexels-card,.player-card{border-radius:30px;padding:clamp(1rem,2vw,1.25rem)}
-.pexels-card-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;color:var(--graphite-soft);font-size:0.82rem;font-weight:820}
-.pexels-card-top span,.pexels-card-top a{display:inline-flex;align-items:center;gap:0.42rem}
-.mood-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0.6rem;margin:1rem 0}
-.mood-grid button{min-height:78px;border:1px solid var(--warm-line);border-radius:18px;background:radial-gradient(circle at 80% 18%,oklch(0.91 0.048 145 / 0.5),transparent 34%),var(--warm-soft);color:var(--graphite);font-weight:850}
-.pexels-flow{display:flex;flex-wrap:wrap;align-items:center;gap:0.55rem;padding:0.85rem;border:1px solid var(--warm-line);border-radius:18px;background:oklch(0.986 0.006 86);color:var(--graphite-soft);font-size:0.85rem;font-weight:800}
-
-.creator-section{align-items:stretch}
-.creator-copy{justify-content:center}
-.player-card{display:grid;gap:1rem;background:radial-gradient(circle at 8% 12%,oklch(0.91 0.048 145 / 0.38),transparent 32%),var(--warm-panel)}
-.player-head{display:flex;align-items:center;gap:0.85rem}
-.player-cover{width:54px;height:54px;border-radius:18px;background:var(--graphite);color:white}
-.player-head strong{display:block;color:var(--graphite);font-weight:880;letter-spacing:-0.025em}
-.player-head small{display:block;margin-top:0.15rem;color:var(--graphite-soft);font-size:0.82rem;font-weight:720}
-.player-card iframe{overflow:hidden;border:0;border-radius:18px;background:var(--warm-soft)}
-
-.specs-section .section-heading{margin-bottom:1.2rem}
-.specs-table{overflow:hidden;border-radius:24px}
-.spec-row{display:grid;grid-template-columns:180px minmax(0,1fr);gap:1rem;padding:1rem 1.1rem;border-bottom:1px solid var(--warm-line);background:oklch(1 0.003 86 / 0.72)}
-.spec-row:last-child{border-bottom:0}
-.spec-row strong{color:var(--graphite);font-size:0.92rem}
-.spec-row span{color:var(--graphite-soft);font-size:0.92rem;line-height:1.55}
-
-.guide-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0.8rem;margin-top:0.9rem}
-.guide-card{border-radius:24px;padding:1rem}
-.guide-card h3{margin:0.8rem 0 0.45rem;color:var(--graphite);font-size:1rem;font-weight:870}
-.guide-card p{margin:0;color:var(--graphite-soft);font-size:0.87rem;line-height:1.58}
-
-.privacy-section{display:grid;grid-template-columns:minmax(0,0.85fr) minmax(320px,1.15fr);gap:clamp(1rem,4vw,3rem);align-items:center;margin-top:clamp(68px,8vw,108px);padding:clamp(1.2rem,3vw,2rem);border:1px solid var(--green-line);border-radius:34px;background:linear-gradient(135deg,var(--green-soft),oklch(1 0.003 86 / 0.86));box-shadow:var(--shadow-soft)}
-.privacy-list{display:grid;gap:0.7rem}
-.privacy-list span{padding:0.85rem;border:1px solid oklch(0.75 0.12 145 / 0.42);border-radius:18px;background:oklch(1 0.003 86 / 0.58)}
-
-.faq-section .section-heading{margin-bottom:1rem}
-.faq-list{display:grid;gap:0.7rem}
-.faq-card{border-radius:20px;padding:0.95rem 1rem;list-style:none}
-.faq-card summary{color:var(--graphite);font-weight:850;letter-spacing:-0.015em;list-style:none;cursor:pointer}
-.faq-card summary::-webkit-details-marker{display:none}
-.faq-card p{margin:0.75rem 0 0;color:var(--graphite-soft);line-height:1.62}
-
-.footer{display:flex;justify-content:space-between;gap:1rem;padding:56px 0 34px;color:var(--graphite-soft);font-size:0.86rem;font-weight:720}
-.footer a{border-radius:999px;padding:0.25rem 0.55rem}
-
-@media (max-width:980px){
-  .intro-section,.workspace-grid,.split-section,.creator-section,.privacy-section{grid-template-columns:1fr}
-  .intro-notes{width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}
-  .format-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .spec-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .workspace-grid{gap:0.85rem}
-  .device-stage{min-height:380px}
-  .guide-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+/* Format tabs */
+.formats{display:flex;gap:4px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;background:var(--card2);padding:4px;border-radius:var(--r);display:inline-flex}
+.fmt{
+  padding:10px 18px;border:none;border-radius:var(--r-sm);
+  background:transparent;color:var(--text2);font-family:var(--sans);font-size:13px;font-weight:600;
+  cursor:pointer;transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:2px;
 }
-@media (max-width:720px){
-  .topbar{align-items:stretch;flex-direction:column}
-  .nav-links{order:3;justify-content:space-between;overflow-x:auto;border-radius:18px}
-  .nav-cta{align-self:start}
-  .intro-copy h1{font-size:clamp(2.35rem,15vw,3.8rem)}
-  .intro-section{padding-top:22px}
-  .workspace-shell{border-radius:26px}
-  .workspace-head{flex-direction:column}
-  .format-tabs,.spec-strip,.export-summary,.mood-grid,.guide-grid{grid-template-columns:1fr}
-  .preview-frame--header{width:100%}
-  .preview-frame--canvas{width:166px;height:295px}
-  .preview-frame--avatar,.preview-frame--cover{width:230px;height:230px}
-  .device-stage{min-height:340px}
-  .spec-row{grid-template-columns:1fr;gap:0.35rem}
-  .footer{flex-direction:column}
+.fmt:hover{color:var(--text)}
+.fmt.on{background:var(--card);color:var(--text);box-shadow:var(--shadow-sm)}
+.fmt small{font-family:var(--mono);font-size:9px;font-weight:400;color:var(--text3);letter-spacing:.3px}
+.fmt.on small{color:var(--green-text)}
+
+/* Specs strip */
+.specs-strip{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:10px}
+.fmt-rule{font-size:13px;line-height:1.5;color:var(--text2);max-width:560px;margin:0 auto 24px;text-align:center}
+
+/* Creator card with compact Spotify mini-bar */
+.creator-card{display:grid;grid-template-columns:1fr 280px;gap:14px;align-items:center;max-width:640px;margin:0 auto 28px;padding:14px 16px;background:linear-gradient(135deg,var(--card) 0%,var(--green-bg) 100%);border:1px solid var(--green-border);border-radius:var(--r);text-align:left;box-shadow:var(--shadow-sm)}
+.creator-text{display:flex;flex-direction:column;gap:6px}
+.creator-eyebrow{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:9px;font-weight:600;color:var(--green-text);letter-spacing:.08em}
+.creator-line{font-size:12px;line-height:1.5;color:var(--text2);margin:0}
+.creator-line b{color:var(--text);font-weight:600}
+.creator-name{color:var(--green-text);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+.creator-name:hover{border-bottom-color:var(--green-text)}
+.creator-name b{color:var(--green-text)}
+.creator-embed-slot{width:100%;height:80px;display:block}
+.creator-embed{width:100%;height:80px;border:0;border-radius:10px;display:block;background:#191414}
+.creator-embed-ph{width:100%;height:80px;border:1px solid var(--green-border);background:#191414;color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;transition:all .15s}
+.creator-embed-ph svg{color:var(--green)}
+.creator-embed-ph:hover{background:#262420;border-color:var(--green)}
+@media(max-width:640px){
+  .creator-card{grid-template-columns:1fr;gap:10px;padding:12px}
+  .creator-embed,.creator-embed-slot,.creator-embed-ph{height:64px}
 }
+.ss{font-family:var(--mono);font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px}
+.ss::before{content:'';width:4px;height:4px;background:var(--border2);border-radius:50%}
 
-/* Bridge — keep existing tool elements working with Manus-styled wrappers */
-.crop-container{display:flex;justify-content:center;margin:8px 0}
-.crop-wrap{position:relative;overflow:hidden;border-radius:24px;box-shadow:var(--shadow-soft);touch-action:none;cursor:grab;background:#000}
-.crop-wrap:active{cursor:grabbing}
-.crop-wrap canvas{display:block}
-.crop-x{position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);z-index:5}
-.crop-x:hover{background:rgba(217,64,64,.85)}
-.crop-hint{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);padding:6px 12px;background:rgba(0,0,0,.7);color:#fff;font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.05em;border-radius:14px;z-index:4;pointer-events:none}
+/* ============ DROP ZONE ============ */
+.drop-area{max-width:520px;margin:0 auto 40px}
+.drop{
+  width:100%;padding:48px 24px;
+  background:var(--card);border:2px dashed var(--border);border-radius:var(--r-lg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  cursor:pointer;transition:all .25s ease;
+}
+.drop:hover{border-color:var(--green);background:var(--green-bg);transform:translateY(-1px);box-shadow:var(--shadow)}
+.drop.over{border-color:var(--green);background:var(--green-bg);transform:scale(1.01)}
+.drop-ring{width:56px;height:56px;border-radius:14px;background:var(--card2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:all .25s}
+.drop:hover .drop-ring{background:var(--green-bg);border-color:var(--green-border)}
+.drop-ring svg{width:24px;height:24px;stroke:var(--text3);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:stroke .25s}
+.drop:hover .drop-ring svg{stroke:var(--green)}
+.drop .drop-h{font-size:15px;font-weight:600;margin-bottom:4px;display:block;color:var(--text)}
+.drop p{font-size:12px;color:var(--text3)}
 
-.cr{display:flex;align-items:center;gap:10px;padding:8px 0}
-.cl{font-family:ui-monospace,monospace;font-size:10px;font-weight:700;color:var(--graphite-soft);text-transform:uppercase;letter-spacing:.06em;min-width:64px}
-.cr input[type=range]{flex:1;-webkit-appearance:none;height:3px;background:var(--warm-line);border-radius:2px;outline:none}
-.cr input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;background:var(--green);border-radius:50%;cursor:pointer}
-.cr select,.cr input[type=number]{background:var(--warm-soft);border:1px solid var(--warm-line);color:var(--graphite);padding:8px 12px;border-radius:10px;font-family:'Manrope',sans-serif;font-size:13px;outline:none}
-.tv{font-family:ui-monospace,monospace;font-size:11px;color:var(--graphite-soft);min-width:40px;text-align:right}
-.cv{font-family:ui-monospace,monospace;font-size:13px;font-weight:700;color:var(--green-deep)}
-.cv.bad{color:#d94040}
-.size-row{display:flex;gap:6px;flex:1}
-.sb{flex:1;padding:8px;border:1px solid var(--warm-line);border-radius:10px;background:var(--warm-panel);color:var(--graphite-soft);font-family:ui-monospace,monospace;font-size:11px;font-weight:700;cursor:pointer;text-align:center}
-.sb.on{border-color:var(--green-line);color:var(--green-deep);background:var(--green-soft)}
-.sep{height:1px;background:var(--warm-line);margin:4px 0}
-.btn{flex:1;padding:12px 16px;border:0;border-radius:14px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:830;cursor:pointer;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px}
-.btn:disabled{opacity:.4;cursor:not-allowed}
-.btn-row{display:flex;gap:8px;margin-top:8px}
-.btn-ghost{background:var(--warm-soft);color:var(--graphite-soft);border:1px solid var(--warm-line);flex:0 0 44px}
-.btn-dark{background:var(--graphite);color:#fff}
-.btn-green{background:var(--green);color:#fff}
-.btn-green:hover:not(:disabled){background:var(--green-deep)}
-
-.progress{width:100%;height:4px;background:var(--warm-soft);border-radius:2px;overflow:hidden;display:none;margin-top:8px}
-.progress.on{display:block}
-.progress div{height:100%;background:var(--green);transition:width .15s}
-.status{font-size:12px;color:var(--graphite-soft);text-align:center;min-height:18px;margin-top:8px}
-.status.err{color:#d94040}.status.ok{color:var(--green-deep)}
-
-.ws-source{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--graphite-soft);background:var(--warm-panel);border:1px solid var(--warm-line);padding:3px 4px 3px 10px;border-radius:16px;margin-left:8px;cursor:pointer}
-.ws-source:hover{border-color:var(--green-line);background:var(--green-soft);color:var(--green-deep)}
-.ws-source-arrow{font-size:11px}
-.ws-source-x{width:18px;height:18px;border:0;background:var(--warm-soft);color:var(--graphite-soft);border-radius:50%;font-size:14px;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0}
+/* Stock browser */
+.stock-or{display:flex;align-items:center;gap:12px;margin:14px auto 12px;max-width:280px;color:var(--text3)}
+.stock-or-line{flex:1;height:1px;background:var(--border)}
+.stock-or-text{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.stock-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px 16px;background:var(--card);border:1px solid var(--border);border-radius:var(--r);font-family:var(--sans);font-size:13px;font-weight:600;color:var(--text2);cursor:pointer;transition:all .2s;box-shadow:var(--shadow-sm)}
+.stock-btn:hover{border-color:var(--green);color:var(--text);background:var(--green-bg);transform:translateY(-1px);box-shadow:var(--shadow)}
+.stock-btn svg{color:var(--green)}
+.stock-btn-tag{font-family:var(--mono);font-size:9px;font-weight:500;color:var(--text3);background:var(--card2);border:1px solid var(--border);padding:2px 7px;border-radius:10px;letter-spacing:.05em}
+.stock-btn:hover .stock-btn-tag{background:var(--card);border-color:var(--green-border);color:var(--green-text)}
 
 .stock-modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
 .stock-modal.on{display:flex}
-.stock-overlay{position:absolute;inset:0;background:rgba(20,18,15,.5);backdrop-filter:blur(4px)}
-.stock-inner{position:relative;width:100%;max-width:920px;max-height:90vh;background:var(--warm);border:1px solid var(--warm-line);border-radius:24px;box-shadow:var(--shadow-soft);display:flex;flex-direction:column;overflow:hidden}
-.stock-head{display:flex;gap:8px;padding:16px 20px;border-bottom:1px solid var(--warm-line);background:var(--warm-panel)}
-.stock-head input{flex:1;background:var(--warm-soft);border:1px solid var(--warm-line);color:var(--graphite);padding:10px 14px;border-radius:10px;font-family:'Manrope',sans-serif;font-size:14px;outline:none}
-.stock-close{width:38px;height:38px;background:var(--warm-soft);border:1px solid var(--warm-line);border-radius:10px;font-size:22px;color:var(--graphite-soft);cursor:pointer;line-height:1}
-.stock-tags{display:flex;gap:6px;padding:12px 20px;flex-wrap:wrap;border-bottom:1px solid var(--warm-line);background:var(--warm-panel)}
-.stock-tags button{padding:6px 12px;background:var(--warm-soft);border:1px solid var(--warm-line);border-radius:16px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:var(--graphite-soft);cursor:pointer}
-.stock-tags button.on{background:var(--green-soft);border-color:var(--green-line);color:var(--green-deep)}
-.stock-grid{flex:1;overflow-y:auto;padding:16px 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;background:var(--warm)}
-.stock-card{position:relative;aspect-ratio:9/16;border-radius:14px;overflow:hidden;cursor:pointer;background:var(--warm-soft);border:1px solid var(--warm-line)}
+.stock-overlay{position:absolute;inset:0;background:rgba(20,18,15,.5);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.stock-inner{position:relative;width:100%;max-width:920px;max-height:90vh;background:var(--bg);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow-lg);display:flex;flex-direction:column;overflow:hidden;animation:modalIn .25s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+.stock-head{display:flex;gap:8px;padding:16px 20px;border-bottom:1px solid var(--border);background:var(--card)}
+.stock-head input{flex:1;background:var(--card2);border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:var(--r-sm);font-family:var(--sans);font-size:14px;outline:none;transition:border .15s}
+.stock-head input:focus{border-color:var(--green);background:var(--card)}
+.stock-close{width:38px;height:38px;background:var(--card2);border:1px solid var(--border);border-radius:var(--r-sm);font-size:22px;color:var(--text2);cursor:pointer;line-height:1;transition:all .15s}
+.stock-close:hover{background:var(--border);color:var(--text)}
+.stock-tags{display:flex;gap:6px;padding:12px 20px;flex-wrap:wrap;border-bottom:1px solid var(--border);background:var(--card)}
+.stock-tags button{padding:6px 12px;background:var(--card2);border:1px solid var(--border);border-radius:16px;font-family:var(--sans);font-size:12px;font-weight:500;color:var(--text2);cursor:pointer;transition:all .15s}
+.stock-tags button:hover{border-color:var(--border2);color:var(--text)}
+.stock-tags button.on{background:var(--green-bg);border-color:var(--green-border);color:var(--green-text)}
+.stock-grid{flex:1;overflow-y:auto;padding:16px 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;background:var(--bg)}
+.stock-card{position:relative;aspect-ratio:9/16;border-radius:var(--r-sm);overflow:hidden;cursor:pointer;background:var(--card2);border:1px solid var(--border);transition:all .15s}
 .stock-grid[data-orient="landscape"] .stock-card{aspect-ratio:2660/1140}
 .stock-grid[data-orient="square"] .stock-card{aspect-ratio:1/1}
-.stock-card:hover{border-color:var(--green-line)}
-.stock-card img{width:100%;height:100%;object-fit:cover}
-.stock-card .dur{position:absolute;top:6px;right:6px;background:rgba(0,0,0,.65);color:#fff;font-family:ui-monospace,monospace;font-size:10px;padding:2px 6px;border-radius:4px}
-.stock-card .phot{position:absolute;left:0;right:0;bottom:0;padding:6px 8px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:10px;font-weight:700;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
-.stock-card .pick{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(29,185,84,.2);opacity:0}
+.stock-card:hover{transform:translateY(-2px);border-color:var(--green);box-shadow:var(--shadow)}
+.stock-card img{width:100%;height:100%;object-fit:cover;display:block}
+.stock-card .dur{position:absolute;top:6px;right:6px;background:rgba(0,0,0,.65);color:#fff;font-family:var(--mono);font-size:10px;padding:2px 6px;border-radius:4px;backdrop-filter:blur(4px)}
+.stock-card .phot{position:absolute;left:0;right:0;bottom:0;padding:6px 8px 5px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:10px;font-weight:500;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
+.stock-card .pick{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(29,185,84,.2);opacity:0;transition:opacity .15s}
 .stock-card:hover .pick{opacity:1}
-.pick-btn{background:var(--green);color:#fff;font-size:11px;font-weight:800;padding:6px 12px;border-radius:14px;font-family:'Manrope',sans-serif}
-.stock-pager{display:flex;align-items:center;justify-content:center;gap:14px;padding:10px 12px}
-.stock-pg-btn{padding:8px 16px;background:var(--warm-panel);border:1px solid var(--warm-line);color:var(--graphite-soft);font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;border-radius:14px;cursor:pointer}
-.stock-pg-btn:disabled{opacity:.4;cursor:not-allowed}
-.stock-pg-info{font-family:ui-monospace,monospace;font-size:11px;color:var(--graphite-faint);min-width:60px;text-align:center}
-.stock-status{padding:0 20px 8px;font-size:12px;color:var(--graphite-soft);text-align:center;min-height:18px}
-.stock-foot{padding:10px 20px;border-top:1px solid var(--warm-line);background:var(--warm-panel);font-size:11px;color:var(--graphite-soft);text-align:center}
-.stock-foot a{color:var(--green-deep);text-decoration:none}
-
-.stock-preview{position:absolute;inset:0;background:var(--warm);display:flex;flex-direction:column;z-index:2}
+.stock-card .pick-btn{background:var(--green);color:#fff;font-size:11px;font-weight:600;padding:6px 12px;border-radius:14px;font-family:var(--mono);letter-spacing:.05em;text-transform:uppercase}
+/* Pexels full preview */
+.stock-preview{position:absolute;inset:0;background:var(--bg);display:flex;flex-direction:column;z-index:2;animation:bodyFade .2s ease}
 .stock-preview[hidden]{display:none}
 .stock-preview-top{display:flex;align-items:center;justify-content:space-between;padding:12px 16px 0}
-.stock-preview-back{padding:8px 14px;background:transparent;border:1px solid var(--warm-line);border-radius:14px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:var(--graphite-soft);cursor:pointer}
-.stock-preview-counter{font-family:ui-monospace,monospace;font-size:11px;color:var(--graphite-faint)}
+.stock-preview-back{padding:8px 14px;background:transparent;border:1px solid var(--border);border-radius:14px;font-family:var(--sans);font-size:12px;font-weight:600;color:var(--text2);cursor:pointer;transition:all .15s}
+.stock-preview-back:hover{border-color:var(--text2);color:var(--text)}
+.stock-preview-counter{font-family:var(--mono);font-size:11px;color:var(--text3);letter-spacing:.05em}
 .stock-preview-stage{flex:1;position:relative;display:flex;align-items:center;justify-content:center;padding:14px 60px;overflow:hidden;background:#0a0a0a;margin-top:12px}
+.stock-preview-media{flex:1;display:flex;align-items:center;justify-content:center;max-height:100%}
 .stock-preview-media video,.stock-preview-media img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;display:block}
-.stock-preview-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.08);color:#fff;font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);z-index:3;font-family:'Manrope',sans-serif;padding:0 0 4px}
-.stock-preview-nav:disabled{opacity:.25}
-.stock-preview-prev{left:10px}.stock-preview-next{right:10px}
-.stock-preview-foot{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-top:1px solid var(--warm-line);background:var(--warm-panel);gap:12px}
-.stock-preview-credit{font-size:12px;color:var(--graphite-soft);text-decoration:none}
+.stock-preview-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.08);color:#fff;font-size:26px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:all .15s;font-family:var(--sans);padding:0 0 4px;z-index:3}
+.stock-preview-nav:hover:not(:disabled){background:rgba(255,255,255,.18);transform:translateY(-50%) scale(1.05)}
+.stock-preview-nav:disabled{opacity:.25;cursor:not-allowed}
+.stock-preview-prev{left:10px}
+.stock-preview-next{right:10px}
+.stock-preview-foot{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-top:1px solid var(--border);background:var(--card);gap:12px}
+.stock-preview-credit{font-size:12px;color:var(--text2);text-decoration:none}
+.stock-preview-credit:hover{color:var(--green-text);text-decoration:underline}
 .stock-preview-actions{display:flex;align-items:center;gap:8px}
-.stock-preview-use{padding:10px 18px;background:var(--green);color:#fff;border:0;border-radius:14px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:800;cursor:pointer}
-.stock-preview-dl{padding:10px 14px;background:var(--warm-panel);color:var(--graphite-soft);border:1px solid var(--warm-line);border-radius:14px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;cursor:pointer}
+.stock-preview-use{padding:10px 18px;background:var(--green);color:#fff;border:0;border-radius:14px;font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;transition:background .15s}
+.stock-preview-use:hover{background:var(--green2)}
+.stock-preview-use:disabled{opacity:.6;cursor:wait}
+.stock-preview-dl{padding:10px 14px;background:var(--card);color:var(--text2);border:1px solid var(--border);border-radius:14px;font-family:var(--sans);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s}
+.stock-preview-dl:hover:not(:disabled){border-color:var(--green-text);color:var(--green-text);background:var(--green-bg)}
+.stock-preview-dl:disabled{opacity:.6;cursor:wait}
+.stock-pager{display:flex;align-items:center;justify-content:center;gap:14px;padding:10px 12px 8px}
+.stock-pg-btn{padding:8px 16px;background:var(--card);border:1px solid var(--border);color:var(--text2);font-family:var(--sans);font-size:12px;font-weight:600;border-radius:14px;cursor:pointer;transition:all .15s}
+.stock-pg-btn:hover:not(:disabled){border-color:var(--green);color:var(--green-text);background:var(--green-bg)}
+.stock-pg-btn:disabled{opacity:.4;cursor:not-allowed}
+.stock-pg-info{font-family:var(--mono);font-size:11px;color:var(--text3);min-width:60px;text-align:center}
+.stock-status{padding:0 20px 8px;font-size:12px;color:var(--text3);text-align:center;min-height:18px}
+.stock-status.err{color:var(--red)}
+.stock-foot{padding:10px 20px;border-top:1px solid var(--border);background:var(--card);font-size:11px;color:var(--text3);text-align:center}
+.stock-foot a{color:var(--green-text);text-decoration:none}
+.stock-foot a:hover{text-decoration:underline}
+@media(max-width:540px){
+  .stock-inner{max-height:96vh;border-radius:var(--r)}
+  .stock-grid{grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}
+  .stock-tags{padding:10px 14px}
+  .stock-head{padding:12px 14px}
+}
+
+/* ============ WORKSPACE ============ */
+.ws{display:none;max-width:520px;margin:0 auto 40px;animation:fadeUp .35s ease}
+.ws.on{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+.ws-badge{display:inline-flex;font-family:var(--mono);font-size:10px;font-weight:500;color:var(--green-text);background:var(--green-bg);border:1px solid var(--green-border);padding:3px 12px;border-radius:16px;margin-bottom:12px}
+.ws-source{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--text2);background:var(--card);border:1px solid var(--border);padding:3px 4px 3px 10px;border-radius:16px;margin:0 0 12px 6px;vertical-align:top;cursor:pointer;transition:all .15s}
+.ws-source:hover{border-color:var(--green);background:var(--green-bg);color:var(--green-text)}
+.ws-source:hover svg{color:var(--green)}
+.ws-source svg{color:var(--green-text);transition:color .15s}
+.ws-source-arrow{font-size:11px;color:var(--text3);transition:color .15s,transform .25s}
+.ws-source:hover .ws-source-arrow{color:var(--green-text);transform:rotate(90deg)}
+.ws-source-x{width:18px;height:18px;border:none;background:var(--card2);color:var(--text2);border-radius:50%;font-size:14px;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:all .15s;padding:0}
+.ws-source-x:hover{background:var(--red-bg);color:var(--red)}
+
+.crop-container{display:flex;justify-content:center;margin-bottom:16px}
+.crop-wrap{position:relative;overflow:hidden;border-radius:var(--r);box-shadow:var(--shadow-lg);touch-action:none;cursor:grab;background:#000}
+.crop-wrap:active{cursor:grabbing}
+.crop-wrap canvas{display:block}
+.crop-x{position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:background .15s,transform .15s;z-index:5;font-family:var(--sans);padding:0}
+.crop-x:hover{background:rgba(217,64,64,.85);transform:scale(1.05)}
+.crop-hint{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);padding:6px 12px;background:rgba(0,0,0,.7);color:#fff;font-family:var(--mono);font-size:10px;letter-spacing:.05em;border-radius:14px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;animation:hintPulse 2.4s ease-out forwards;z-index:4}
+.crop-hint[hidden]{display:none}
+@keyframes hintPulse{0%,8%{opacity:0;transform:translate(-50%,8px)}15%{opacity:1;transform:translate(-50%,0)}80%{opacity:1}100%{opacity:0}}
+
+/* Controls */
+.panel{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px}
+.cr{display:flex;align-items:center;gap:10px}
+.cl{font-family:var(--mono);font-size:10px;font-weight:500;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;min-width:44px}
+.cr input[type=range]{flex:1;-webkit-appearance:none;height:3px;background:var(--border);border-radius:2px;outline:none}
+.cr input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;background:var(--green);border-radius:50%;cursor:pointer;box-shadow:0 1px 4px rgba(29,185,84,.3)}
+.cr select{flex:1;background:var(--card2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:var(--r-sm);font-family:var(--sans);font-size:12px;cursor:pointer;outline:none;transition:border .15s}
+.cr select:focus{border-color:var(--green)}
+.cr input[type=number]{width:52px;background:var(--card2);border:1px solid var(--border);color:var(--text);padding:8px;border-radius:var(--r-sm);font-family:var(--mono);font-size:12px;text-align:center;outline:none}
+.cr input[type=number]:focus{border-color:var(--green)}
+.tv{font-family:var(--mono);font-size:11px;color:var(--text2);min-width:40px;text-align:right}
+.cv{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--green)}
+.cv.bad{color:var(--red)}
+
+.cf-note{font-size:10px;color:var(--text3);font-style:italic;line-height:1.4;padding-left:54px}
+.quality-note{font-family:var(--mono);font-size:10px;color:var(--text3);text-align:center;letter-spacing:.03em;padding:2px 0}
+.size-row{display:flex;gap:6px;flex:1}
+.sb{flex:1;padding:7px;border:1px solid var(--border);border-radius:var(--r-sm);background:var(--card);color:var(--text3);font-family:var(--mono);font-size:10px;font-weight:500;cursor:pointer;text-align:center;transition:all .15s}
+.sb:hover{border-color:var(--border2)}
+.sb.on{border-color:var(--green-text);color:var(--green-text);background:var(--green-bg)}
+
+.sep{height:1px;background:var(--border);margin:2px 0}
+
+.btn-row{display:flex;gap:8px}
+.btn{
+  flex:1;padding:12px 16px;border:none;border-radius:var(--r-sm);
+  font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;
+  transition:all .15s;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.btn:active:not(:disabled){transform:scale(.97)}
+.btn-ghost{background:var(--card2);color:var(--text3);border:1px solid var(--border);flex:0 0 42px}
+.btn-ghost:hover:not(:disabled){background:var(--border);color:var(--text2)}
+.btn-dark{background:var(--text);color:#fff}
+.btn-dark:hover:not(:disabled){background:#333}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover:not(:disabled){background:var(--green2)}
+
+.progress{width:100%;height:3px;background:var(--card2);border-radius:2px;overflow:hidden;display:none}
+.progress.on{display:block}
+.progress div{height:100%;background:var(--green);border-radius:2px;transition:width .15s}
+
+.status{font-size:11px;color:var(--text3);text-align:center;min-height:16px;transition:color .2s}
+.status.err{color:var(--red)}.status.ok{color:var(--green)}.status.busy{color:var(--text2)}
+
+.hidden{display:none!important}
+
+/* ============ FOOTER ============ */
+.footer{max-width:800px;margin:0 auto;padding:40px 24px 32px;text-align:center;border-top:1px solid var(--border)}
+.footer p{font-size:11px;color:var(--text3);line-height:1.6}
+.footer a{color:var(--text2);text-decoration:underline;transition:color .15s}
+
+/* ============ SEO CONTENT — single consistent style ============ */
+.seo{max-width:680px;margin:48px auto 0;padding:32px 24px 24px;font-family:var(--sans)}
+.seo-inner{display:flex;flex-direction:column;gap:24px}
+.seo h2,.seo h3{font-family:var(--sans);font-weight:600;color:var(--text);margin:0;letter-spacing:-.005em}
+.seo h2{font-size:15px;line-height:1.4}
+.seo h3{font-size:14px;margin-top:18px}
+.seo p{font-size:14px;line-height:1.65;color:var(--text2);margin:0}
+.seo a{color:var(--green-text);text-decoration:underline;text-underline-offset:2px}
+.seo a:hover{color:var(--text)}
+.seo b{color:var(--text);font-weight:600}
+.seo ol,.seo ul{padding-left:18px;display:flex;flex-direction:column;gap:8px}
+.seo li{font-size:14px;line-height:1.6;color:var(--text2)}
+.seo-block{border-top:1px solid var(--border);padding-top:20px}
+.seo-block:first-child{border-top:none;padding-top:0}
+.seo-more{display:block;border:1px solid var(--border);border-radius:var(--r);background:var(--card);overflow:hidden}
+.seo-more[open]{border-color:var(--border2)}
+.seo-more summary{list-style:none;padding:14px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:600;color:var(--text);gap:12px;transition:background .15s}
+.seo-more summary::-webkit-details-marker{display:none}
+.seo-more summary:hover{background:var(--card2)}
+.seo-more summary::after{content:"";flex:0 0 12px;width:12px;height:12px;background:var(--text3);-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>") center/contain no-repeat;mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>") center/contain no-repeat;transition:transform .2s ease}
+.seo-more[open] summary::after{transform:rotate(180deg)}
+.seo-more-body{padding:0 18px 20px;display:flex;flex-direction:column;gap:18px;border-top:1px solid var(--border)}
+.seo-more-body>*:first-child{margin-top:18px}
+.seo p{font-size:15px;line-height:1.65;color:var(--text2);margin-bottom:0}
+.seo a{color:var(--green-text);text-decoration:underline;text-underline-offset:2px}
+.seo a:hover{color:var(--text)}
+.seo b{color:var(--text);font-weight:600}
+.spec-list{display:grid;grid-template-columns:110px 1fr;gap:0;font-size:13px;margin-top:14px}
+.spec-list>div{display:contents}
+.spec-list dt{font-size:12px;font-weight:600;color:var(--text);padding:8px 0;border-top:1px solid var(--border)}
+.spec-list dd{color:var(--text2);line-height:1.55;padding:8px 0;border-top:1px solid var(--border)}
+.spec-list>div:first-child dt,.spec-list>div:first-child dd{border-top:none}
+.guide{list-style:none;counter-reset:step;display:flex;flex-direction:column;gap:14px}
+.guide li{counter-increment:step;display:flex;gap:16px;font-size:15px;line-height:1.55;color:var(--text2)}
+.guide li::before{content:counter(step);flex:0 0 28px;width:28px;height:28px;background:var(--green-bg);color:var(--green2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;font-weight:600;margin-top:1px}
+.diff{list-style:none;display:flex;flex-direction:column;gap:12px;padding:0}
+.diff li{font-size:15px;line-height:1.6;color:var(--text2);padding-left:22px;position:relative}
+.diff li::before{content:"✓";position:absolute;left:0;top:0;color:var(--green2);font-weight:700}
+/* FAQ list inside seo-more — same minimal style as everything else */
+.faq{display:flex;flex-direction:column;gap:0}
+.faq details{border-top:1px solid var(--border);background:transparent}
+.faq details:first-child{border-top:none}
+.faq summary{padding:12px 0;font-family:var(--sans);font-size:14px;font-weight:500;color:var(--text);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;line-height:1.4}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:0 0 auto;font-family:var(--sans);font-size:18px;font-weight:300;color:var(--text3);transition:transform .2s ease;line-height:1}
+.faq details[open] summary::after{transform:rotate(45deg);color:var(--text2)}
+.faq summary:hover{color:var(--green-text)}
+.faq details p{padding:0 0 14px;font-size:13.5px;line-height:1.65;color:var(--text2)}
+@media (max-width:640px){
+  .seo h2{font-size:22px}
+  .spec-list{grid-template-columns:1fr;gap:4px}
+  .spec-list dt{padding-top:12px}
+  .spec-list dd{padding-bottom:12px}
+}
+.footer a:hover{color:var(--green)}
+.footer .by{margin-top:8px;font-size:12px;color:var(--text3)}
+.footer .by a{color:var(--green-text);font-weight:600}
+
+/* ============ FEATURES ============ */
+.features{max-width:700px;margin:0 auto;padding:0 24px 48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.feat{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px;transition:all .2s}
+.feat:hover{border-color:var(--border2);box-shadow:var(--shadow)}
+.feat strong{font-size:13px;font-weight:600;margin-bottom:4px}
+.feat p{font-size:11px;color:var(--text3);line-height:1.4}
+
+@media(max-width:500px){
+  .hero{padding:32px 16px 0}
+  .panel{padding:16px}
+  .formats{flex-wrap:wrap}
+  .fmt{padding:8px 12px;font-size:12px}
+  .features{grid-template-columns:1fr}
+}
+
+/* ═════ v18 MANUS OVERLAY — visual only, all functionality preserved ═════ */
+:root{
+  --warm:oklch(.982 .009 86);
+  --warm-panel:oklch(.997 .004 86);
+  --warm-soft:oklch(.956 .014 86);
+  --warm-line:oklch(.855 .012 86);
+  --graphite:oklch(.205 .018 105);
+  --graphite-soft:oklch(.49 .018 105);
+  --graphite-faint:oklch(.62 .016 105);
+  --green-deep:oklch(.36 .12 145);
+  --green-soft:oklch(.91 .048 145);
+  --green-line:oklch(.75 .12 145);
+  --shadow-soft:0 24px 70px oklch(.28 .024 86 / .10);
+  --shadow-small:0 12px 34px oklch(.28 .024 86 / .08);
+}
+body{background:linear-gradient(180deg,oklch(1 .003 86 / .9),transparent 28rem),radial-gradient(circle at 84% 10%,oklch(.91 .048 145 / .34),transparent 26rem),radial-gradient(circle at 8% 36%,oklch(.94 .075 78 / .24),transparent 24rem),var(--warm);font-family:'Manrope',system-ui,-apple-system,"Segoe UI",sans-serif;font-feature-settings:"ss01","ss02";color:var(--graphite);min-height:100vh}
+body>main{max-width:1180px;margin:0 auto;padding:0 clamp(16px,3vw,32px)}
+
+.m-topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:22px clamp(16px,3vw,32px) 16px;max-width:1180px;margin:0 auto}
+.m-brand{display:inline-flex;align-items:center;gap:.62rem;color:var(--graphite);font-weight:850;letter-spacing:-.035em;font-size:18px;text-decoration:none}
+.m-brand-mark{width:34px;height:34px;background:var(--green-deep);color:#fff;border-radius:12px;display:grid;place-items:center}
+.m-nav-links{display:flex;align-items:center;gap:.1rem;padding:.28rem;border:1px solid var(--warm-line);border-radius:999px;background:oklch(1 .003 86 / .76);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.m-nav-links a{color:var(--graphite-soft);text-decoration:none;font-size:13.5px;font-weight:780;padding:.54rem .86rem;border-radius:999px;transition:all .15s}
+.m-nav-links a:hover{background:var(--warm-soft);color:var(--graphite)}
+.m-nav-cta{padding:.72rem 1rem;background:var(--graphite);color:oklch(.99 .005 86);border-radius:999px;font-size:13.5px;font-weight:830;text-decoration:none;transition:transform .15s}
+.m-nav-cta:hover{transform:translateY(-1px)}
+@media(max-width:780px){.m-nav-links{display:none}}
+
+/* Hero override */
+.hero{max-width:none!important;text-align:left!important;padding:clamp(38px,7vw,72px) 0 24px!important;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(1.5rem,5vw,4rem);align-items:end}
+.hero-badge{display:none}
+.hero h1{font-family:'Manrope',sans-serif!important;font-size:clamp(38px,5.9vw,86px)!important;line-height:.99!important;letter-spacing:-.052em!important;font-weight:860!important;color:var(--graphite)!important;margin:0!important;max-width:940px}
+.hero h1 em{font-style:normal!important;color:inherit!important}
+.hero .sub{font-size:clamp(15px,1.6vw,19.5px)!important;line-height:1.6!important;color:var(--graphite-soft)!important;font-weight:560!important;max-width:780px!important;margin:1.35rem 0 0!important}
+.hero .by-link{display:none}
+.hero .formats,.hero .specs-strip,.hero .fmt-rule,.hero .creator-card{display:none}
+.hero-aside{display:grid;gap:.6rem;min-width:200px;padding:1rem 1.1rem;border:1px solid var(--warm-line);border-radius:22px;background:oklch(1 .003 86 / .76);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:var(--shadow-small)}
+.hero-aside span{display:inline-flex;align-items:center;gap:.55rem;color:var(--graphite);font-size:13.5px;font-weight:760}
+.hero-aside svg{color:var(--green-deep);flex:0 0 14px}
+@media(max-width:860px){.hero{grid-template-columns:1fr!important}.hero-aside{grid-template-columns:repeat(2,1fr);width:100%}}
+
+/* Workspace shell wraps the editor (drop+ws+formats+specs) */
+.m-shell{margin-top:clamp(1.4rem,3vw,2.4rem);padding:clamp(1.2rem,2.5vw,1.6rem);border:1px solid var(--warm-line);border-radius:34px;background:oklch(1 .003 86 / .84);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:var(--shadow-soft)}
+.m-shell-head{margin-bottom:1.2rem}
+.m-eyebrow{display:inline-flex;align-items:center;gap:.4rem;margin:0 0 .5rem;color:var(--green-deep);font-size:.76rem;font-weight:820;letter-spacing:.08em;text-transform:uppercase}
+.m-title{font-family:'Manrope',sans-serif;font-size:clamp(24px,3.6vw,42px);line-height:1.04;letter-spacing:-.025em;font-weight:850;margin:0;color:var(--graphite)}
+
+/* Format tabs as 4-col grid INSIDE m-shell */
+.m-shell .formats{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:.72rem!important;background:transparent!important;padding:0!important;border-radius:0!important;margin-bottom:.8rem}
+.m-shell .fmt{padding:.9rem!important;border:1px solid var(--warm-line)!important;border-radius:19px!important;background:var(--warm-panel)!important;color:var(--graphite)!important;text-align:left!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:.2rem;font-weight:860!important;font-size:.95rem!important;transition:transform .15s,border-color .15s,background .15s}
+.m-shell .fmt small{color:var(--graphite-soft)!important;font-size:.76rem!important;font-weight:720!important;letter-spacing:0;text-transform:none!important;font-family:inherit!important}
+.m-shell .fmt:hover{transform:translateY(-2px);border-color:var(--green-line)!important}
+.m-shell .fmt.on{background:linear-gradient(135deg,var(--green-soft),oklch(1 .003 86))!important;border-color:var(--green-line)!important;color:var(--green-deep)!important;box-shadow:inset 0 0 0 1px oklch(1 0 0 / .55),var(--shadow-small)!important}
+.m-shell .fmt.on small{color:var(--green-deep)!important}
+@media(max-width:780px){.m-shell .formats{grid-template-columns:repeat(2,1fr)!important}}
+
+/* Specs strip 4-col with dividers */
+.m-shell .specs-strip{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:1px!important;overflow:hidden;border:1px solid var(--warm-line);border-radius:18px;background:var(--warm-line);margin:.8rem 0!important}
+.m-shell .ss{padding:.9rem 1rem!important;background:oklch(.986 .006 86)!important;color:var(--graphite-soft)!important;font-size:.86rem!important;font-weight:760!important;font-family:inherit!important}
+.m-shell .ss::before{display:none!important}
+@media(max-width:780px){.m-shell .specs-strip{grid-template-columns:repeat(2,1fr)!important}}
+.m-shell .fmt-rule{font-size:15px!important;color:var(--graphite-soft)!important;max-width:780px!important;margin:.8rem 0 1.4rem!important;line-height:1.6!important;font-weight:560!important;text-align:left!important}
+
+/* Drop zone — Manus style */
+.m-shell .drop-area{max-width:none!important}
+.m-shell .drop{padding:2rem 1.5rem!important;background:linear-gradient(135deg,oklch(.91 .048 145 / .34),transparent),var(--warm-panel)!important;border:1.5px dashed var(--green-line)!important;border-radius:26px!important;min-height:240px}
+.m-shell .drop-ring{background:var(--warm-panel)!important;border:1px solid var(--warm-line)!important;width:38px!important;height:38px!important;border-radius:14px!important;color:var(--green-deep)!important}
+.m-shell .drop:hover{border-color:var(--green-deep)!important;background:linear-gradient(135deg,oklch(.91 .048 145 / .5),transparent),var(--warm-panel)!important}
+.m-shell .drop strong,.m-shell .drop .drop-h{font-size:1.05rem!important;font-weight:860!important;color:var(--graphite)!important;letter-spacing:-.025em!important}
+.m-shell .drop p{color:var(--graphite-soft)!important;font-size:.78rem!important;font-weight:720!important}
+
+/* Stock browse button */
+.m-shell .stock-or{margin:1rem auto!important;color:var(--graphite-faint)!important}
+.m-shell .stock-or-line{background:var(--warm-line)!important}
+.m-shell .stock-btn{padding:.82rem 1rem!important;background:var(--green-soft)!important;border:1px solid var(--green-line)!important;color:var(--green-deep)!important;border-radius:999px!important;font-weight:820!important;width:100%}
+.m-shell .stock-btn:hover{transform:translateY(-2px);background:var(--green-soft)!important;color:var(--green-deep)!important}
+.m-shell .stock-btn-tag{background:transparent!important;border:none!important;color:var(--green-deep)!important;padding:0!important}
+
+/* Workspace canvas + controls */
+.m-shell .ws{max-width:none!important;margin:0!important}
+.m-shell .crop-container{margin:1rem 0!important}
+.m-shell .crop-wrap{border-radius:26px!important;box-shadow:var(--shadow-soft)!important}
+.m-shell .panel{background:var(--warm-panel)!important;border:1px solid var(--warm-line)!important;border-radius:24px!important;padding:1.2rem!important;box-shadow:var(--shadow-small)!important}
+.m-shell .ws-badge{font-family:ui-monospace,monospace!important;color:var(--green-deep)!important;background:var(--green-soft)!important;border:1px solid var(--green-line)!important}
+.m-shell .btn-green{background:var(--green-deep)!important;border-radius:14px!important;font-weight:830!important}
+.m-shell .btn-green:hover:not(:disabled){background:var(--green-deep)!important;transform:translateY(-1px);filter:brightness(1.1)}
+.m-shell .btn-dark{background:var(--graphite)!important;border-radius:14px!important}
+.m-shell .btn-ghost{background:var(--warm-soft)!important;border:1px solid var(--warm-line)!important;color:var(--graphite-soft)!important;border-radius:14px!important}
+.m-shell .sb{border:1px solid var(--warm-line)!important;background:var(--warm-panel)!important;font-family:inherit!important;border-radius:10px!important}
+.m-shell .sb.on{border-color:var(--green-line)!important;color:var(--green-deep)!important;background:var(--green-soft)!important}
+.m-shell .cl{font-family:ui-monospace,monospace!important;font-size:10px!important;font-weight:720!important;color:var(--graphite-soft)!important;text-transform:uppercase!important;letter-spacing:.08em!important}
+.m-shell .quality-note{font-family:ui-monospace,monospace!important;color:var(--graphite-faint)!important}
+.m-shell .cf-note{padding-left:0!important;text-align:center}
+
+/* Section wrappers around remaining SEO content */
+.m-section{margin-top:clamp(68px,8vw,108px)}
+.m-section-head{margin-bottom:1.4rem}
+.m-section-eyebrow{display:inline-flex;color:var(--green-deep);font-size:.76rem;font-weight:820;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.m-section-title{font-family:'Manrope',sans-serif;font-size:clamp(24px,3.6vw,42px);line-height:1.04;letter-spacing:-.025em;font-weight:850;margin:0;color:var(--graphite)}
+.m-section-lede{font-size:15px;line-height:1.55;color:var(--graphite-soft);max-width:680px;margin:.5rem 0 0;font-weight:560}
+
+/* Reskin existing creator-card */
+.creator-card{background:radial-gradient(circle at 8% 12%,oklch(.91 .048 145 / .38),transparent 32%),var(--warm-panel)!important;border:1px solid var(--warm-line)!important;border-radius:30px!important;padding:clamp(1rem,2vw,1.25rem)!important;box-shadow:var(--shadow-small)!important;display:grid!important;grid-template-columns:minmax(0,.86fr) minmax(360px,1.14fr)!important;align-items:stretch!important;gap:clamp(1rem,4vw,3rem)!important;margin:0!important}
+.creator-eyebrow{color:var(--green-deep)!important;font-family:'Manrope',sans-serif!important;font-weight:820!important;letter-spacing:.08em!important}
+.creator-line{color:var(--graphite-soft)!important;font-size:1rem!important;line-height:1.6!important;font-weight:560!important}
+.creator-name{color:var(--green-deep)!important;font-weight:830!important}
+.creator-embed-slot{height:152px!important}
+.creator-embed,.creator-embed-ph{height:152px!important;border-radius:18px!important}
+@media(max-width:780px){.creator-card{grid-template-columns:1fr!important}}
+
+/* SEO content reskin */
+.seo{padding:0!important;max-width:none!important;margin:0!important}
+.seo-inner{max-width:none!important}
+.seo-block{padding:clamp(1.2rem,3vw,2rem)!important;background:oklch(1 .003 86 / .84)!important;border:1px solid var(--warm-line)!important;border-radius:34px!important;box-shadow:var(--shadow-soft)!important}
+.seo-block h2{font-family:'Manrope',sans-serif!important;font-size:clamp(24px,3.5vw,40px)!important;font-weight:850!important;letter-spacing:-.025em!important;color:var(--graphite)!important;margin-bottom:1rem!important}
+.spec-list{background:transparent!important;border:none!important;padding:0!important;border-radius:24px!important;overflow:hidden;display:block!important}
+.spec-list>div{background:oklch(1 .003 86 / .72)!important;border-bottom:1px solid var(--warm-line)!important;padding:1rem 1.1rem!important;display:grid!important;grid-template-columns:140px 1fr!important;gap:1rem!important}
+.spec-list>div:last-child{border-bottom:none!important}
+.spec-list dt{font-family:'Manrope',sans-serif!important;font-size:.92rem!important;font-weight:850!important;color:var(--graphite)!important;letter-spacing:0!important;text-transform:none!important;padding:0!important}
+.spec-list dd{font-family:'Manrope',sans-serif!important;color:var(--graphite-soft)!important;font-size:.92rem!important;line-height:1.55!important;padding:0!important;border:none!important}
+
+.seo-more{background:var(--warm-panel)!important;border:1px solid var(--warm-line)!important;border-radius:30px!important;box-shadow:var(--shadow-small)!important}
+.seo-more summary{padding:1rem 1.4rem!important;font-weight:850!important;font-size:1rem!important}
+
+.faq details{background:var(--warm-panel)!important;border:1px solid var(--warm-line)!important;border-radius:20px!important;padding:.95rem 1.1rem!important;border-bottom:1px solid var(--warm-line)!important;margin-bottom:.7rem}
+.faq summary{font-weight:850!important;color:var(--graphite)!important;letter-spacing:-.015em!important;font-size:.96rem!important;padding:0!important}
+.faq summary::after{display:none!important}
+.faq details p{margin:.75rem 0 0!important;color:var(--graphite-soft)!important;line-height:1.62!important;font-size:.92rem!important;padding:0!important}
+
+/* Footer redesign */
+.footer{margin-top:clamp(48px,6vw,80px)!important;border-top:none!important;padding:24px clamp(16px,2vw,28px)!important;background:oklch(1 .003 86 / .84)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--warm-line)!important;border-radius:24px!important;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;box-shadow:var(--shadow-small)!important;max-width:1180px;margin-left:auto;margin-right:auto}
+.footer p{font-size:.86rem!important;color:var(--graphite-soft)!important;font-weight:720!important}
+.footer a{color:var(--graphite)!important}
+.features{display:none!important}
+
+@media(max-width:640px){
+  .m-shell{padding:1.2rem!important;border-radius:26px!important}
+  body>main{padding:0 16px}
+  .m-topbar{padding:14px 16px 10px}
+}
 </style>
 </head>
 <body>
-<main class="site-shell" id="top">
 
-<nav class="topbar" aria-label="Main navigation">
-  <a class="brand" href="#top" aria-label="spotifyedits home">
-    <span class="brand-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="18" r="4"/><path d="M12 18V2l7 4"/></svg></span>
+<nav class="m-topbar" aria-label="Main navigation">
+  <a class="m-brand" href="#top">
+    <span class="m-brand-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="18" r="4"/><path d="M12 18V2l7 4"/></svg></span>
     <span>spotifyedits</span>
   </a>
-  <div class="nav-links" aria-label="Page sections">
+  <div class="m-nav-links">
     <a href="#workspace">Editor</a>
-    <a href="#pexels">Pexels</a>
     <a href="#guide">Guide</a>
     <a href="#faq">FAQ</a>
   </div>
-  <a class="nav-cta" href="#workspace">Open editor</a>
+  <a class="m-nav-cta" href="#workspace">Open editor</a>
 </nav>
 
-<section class="intro-section" aria-labelledby="intro-title">
-  <div class="intro-copy">
-    <p class="eyebrow">Spotify visual maker</p>
-    <h1 id="intro-title">Make Spotify visuals with the right format from the start.</h1>
-    <p class="intro-lede">Prepare Canvas, Header, Avatar and Cover Art in one workspace. Choose the output, add your image or video, check the preview, then export with the specs Spotify expects.</p>
-  </div>
-  <div class="intro-notes" aria-label="Product advantages">
+<main id="top">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge"><div class="dot"></div>Free · No signup · No watermark</div>
+  <h1>Free <em>Canvas Maker</em> for Spotify Artists</h1>
+  <p class="sub">Make a seamless 9:16 looping Canvas MP4 in your browser — exact 1080×1920 specs, 3–8 seconds, with real crossfade. Plus Header, Avatar and Cover Art tools, all in one. Files never leave your device.</p>
+
+  <aside class="hero-aside" aria-label="Product advantages">
     <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Free</span>
     <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> No signup</span>
     <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> No watermark</span>
     <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Local preview</span>
-  </div>
-</section>
+  </aside>
+</div>
 
-<section class="workspace-shell" id="workspace" aria-label="spotifyedits editor workspace">
-  <div class="workspace-head">
-    <div>
-      <p class="eyebrow">Editor workspace</p>
-      <h2>Choose a format. Everything else updates around it.</h2>
-    </div>
-    <a class="small-link" href="#guide">Read the specs ›</a>
+<!-- WORKSPACE SHELL — Manus-styled wrapper around drop+ws (functional editor) -->
+<section class="m-shell" id="workspace" aria-label="Editor workspace">
+  <div class="m-shell-head">
+    <p class="m-eyebrow">Editor workspace</p>
+    <h2 class="m-title">Choose a format. Drop your file, edit, export.</h2>
   </div>
 
-  <div class="format-tabs" id="formatBar" role="tablist" aria-label="Choose output format">
-    <button class="format-tab is-active fmt on" data-fmt="canvas" type="button" role="tab" aria-selected="true">
-      <span class="format-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg></span>
-      <span><strong>Canvas</strong><small>9:16 · MP4/JPG</small></span>
-    </button>
-    <button class="format-tab fmt" data-fmt="header" type="button" role="tab">
-      <span class="format-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/></svg></span>
-      <span><strong>Header</strong><small>2660 × 1140</small></span>
-    </button>
-    <button class="format-tab fmt" data-fmt="avatar" type="button" role="tab">
-      <span class="format-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M7 20.66c1.4-1.5 3.4-2.5 5-2.5s3.6 1 5 2.5"/></svg></span>
-      <span><strong>Avatar</strong><small>750 × 750</small></span>
-    </button>
-    <button class="format-tab fmt" data-fmt="cover" type="button" role="tab">
-      <span class="format-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></span>
-      <span><strong>Cover Art</strong><small>3000 × 3000</small></span>
-    </button>
+  <div class="formats" id="formatBar">
+    <button class="fmt on" data-fmt="canvas">Canvas<small>9:16 · MP4/JPG</small></button>
+    <button class="fmt" data-fmt="header">Header<small>2660 × 1140</small></button>
+    <button class="fmt" data-fmt="avatar">Avatar<small>750 × 750</small></button>
+    <button class="fmt" data-fmt="cover">Cover Art<small>3000 × 3000</small></button>
   </div>
 
-  <div class="spec-strip" id="specsStrip" aria-label="Selected format specifications">
-    <span class="ss"><strong>Canvas</strong></span>
+  <div class="specs-strip" id="specsStrip">
+    <span class="ss">9:16 ratio</span>
     <span class="ss">1080 × 1920</span>
-    <span class="ss">9:16</span>
-    <span class="ss">3–8 sec</span>
+    <span class="ss">JPEG or MP4</span>
+    <span class="ss">3-8 seconds</span>
   </div>
+  <p class="fmt-rule" id="fmtRule">A 3–8 second vertical loop that replaces cover art in the Now Playing view on the Spotify mobile app.</p>
 
-  <div class="workspace-grid">
-    <!-- INPUT PANEL — all our editor controls -->
-    <div class="input-panel">
-      <div class="selected-context">
-        <span class="context-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4V2"/><path d="M15 16v-2"/><path d="M8 9h2"/><path d="M20 9h2"/><path d="M17.8 11.8 19 13"/><path d="M15 9h.01"/><path d="M17.8 6.2 19 5"/><path d="m3 21 9-9"/><path d="M12.2 6.2 11 5"/></svg></span>
-        <div>
-          <h3 id="fmtRule">A 3–8 second vertical loop that replaces cover art in the Now Playing view on the Spotify mobile app.</h3>
-          <p>The crop is locked to 9:16 and checked against Spotify Canvas specs before export.</p>
-        </div>
-      </div>
-
-      <!-- DROP ZONE — wired to JS via #drop, #fi -->
-      <div class="drop-area" id="dropArea">
-        <label class="dropzone" id="drop">
-          <input type="file" id="fi" accept="image/*,video/*,.mp4,.mov,.webm">
-          <span class="upload-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></span>
-          <strong id="dropHint">Drop a photo or video for a vertical Canvas</strong>
-          <small id="dropExt">JPG · PNG · WEBP · MP4 · MOV · WEBM</small>
-        </label>
-
-        <div class="source-actions" style="margin-top:1rem">
-          <button class="secondary-action" id="stockBtn" type="button">
-            <svg id="stockIconVideo" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-            <svg id="stockIconPhoto" class="hidden" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span id="stockBtnLabel">Browse free stock videos</span>
-          </button>
-        </div>
-      </div>
-      <div class="stock-or hidden" id="stockOr"></div>
-
-      <!-- WORKSPACE (canvas preview) — shown after file loaded via JS -->
-      <div class="ws" id="ws" style="display:none">
-        <div style="margin-bottom:8px">
-          <span id="badge" style="font-family:ui-monospace,monospace;font-size:10px;font-weight:700;color:var(--green-deep);letter-spacing:.06em">IMAGE → CANVAS</span>
-          <span class="ws-source hidden" id="wsSource" role="button" tabindex="0">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-            <span id="wsSourceText">Pexels</span>
-            <span class="ws-source-arrow">↻</span>
-            <button class="ws-source-x" id="wsSourceX" type="button">×</button>
-          </span>
-        </div>
-        <div class="crop-container"><div class="crop-wrap" id="wrap"><canvas id="cv"></canvas><button class="crop-x" id="cropX" type="button" title="Remove">×</button><div class="crop-hint" id="cropHint" hidden>↔ Drag to choose crop · ⊕ Zoom</div></div></div>
-
-        <div class="export-card">
-          <div class="cr"><span class="cl">Zoom</span><input type="range" id="zm" min="10" max="500" value="100"></div>
-          <div id="imgCtl">
-            <div class="cr">
-              <span class="cl">Effect</span>
-              <select id="fx">
-                <option value="zoom_in">Slow zoom in</option>
-                <option value="zoom_out">Slow zoom out</option>
-                <option value="pan_up">Pan up</option>
-                <option value="pan_down">Pan down</option>
-                <option value="breathe">Breathe</option>
-                <option value="static">Static</option>
-              </select>
-              <input type="number" id="dur" value="6" min="3" max="8" style="width:60px">
-            </div>
-          </div>
-          <div id="vidCtl" class="hidden">
-            <div class="cr"><span class="cl">Start</span><input type="range" id="ts" min="0" max="100" value="0" step="0.01"><span class="tv" id="tsD">0:00</span></div>
-            <div class="cr"><span class="cl">End</span><input type="range" id="te" min="0" max="100" value="8" step="0.01"><span class="tv" id="teD">0:08</span></div>
-            <div class="cr"><span class="cl">Clip</span><span class="cv" id="clD">8.0s</span></div>
-          </div>
-          <div class="sep"></div>
-          <div class="cr" id="fadeCtl">
-            <span class="cl">Loop</span>
-            <label style="display:flex;align-items:center;gap:8px;font-size:13px"><input type="checkbox" id="cf" style="width:16px;height:16px"><span>Crossfade</span></label>
-            <select id="cfDur" style="margin-left:8px"><option value="0.3">0.3s</option><option value="0.5" selected>0.5s</option><option value="0.8">0.8s</option></select>
-          </div>
-          <div class="cr" id="sloCtl">
-            <span class="cl">Slow-mo</span>
-            <label style="display:flex;align-items:center;gap:8px;font-size:13px"><input type="checkbox" id="slo" style="width:16px;height:16px"><span>Play 0.5×</span></label>
-          </div>
-          <div class="sep"></div>
-          <div class="cr"><span class="cl">Size</span><div class="size-row" id="sizeRow"><button class="sb" data-w="720" data-h="1280">720×1280</button><button class="sb on" data-w="1080" data-h="1920">1080×1920</button></div></div>
-          <div class="quality-note" id="qualityNote" style="font-family:ui-monospace,monospace;font-size:10px;color:var(--graphite-faint);text-align:center;margin:4px 0">High quality · H.264 · ~12 Mbps · 30 fps</div>
-
-          <div class="btn-row">
-            <button class="btn btn-ghost" id="rst" type="button" title="Start over">↺</button>
-            <button class="btn btn-ghost" id="rep" type="button" title="Replace file">⇆</button>
-            <button class="btn btn-dark hidden" id="ej">Save JPEG</button>
-            <button class="btn btn-green" id="exp">Export MP4</button>
-          </div>
-          <div class="progress" id="prog"><div id="pf" style="width:0%"></div></div>
-          <div class="status" id="nfo"></div>
-        </div>
-      </div>
+<!-- DROP ZONE -->
+<div class="drop-area" id="dropArea">
+  <div class="drop" id="drop">
+    <div class="drop-ring">
+      <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
     </div>
-
-    <!-- PREVIEW PANEL — static device-stage mockup -->
-    <aside class="preview-panel" aria-label="Format preview">
-      <div class="panel-topline">
-        <div>
-          <p class="panel-label">Live preview</p>
-          <h2>Mobile Canvas frame</h2>
-        </div>
-        <span class="status-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg> Local</span>
-      </div>
-      <div class="device-stage">
-        <div class="preview-frame preview-frame--canvas">
-          <div class="preview-grid"></div>
-          <div class="preview-content"><span>9:16</span><strong>Canvas</strong></div>
-          <span class="phone-bar"></span>
-        </div>
-      </div>
-      <div class="export-summary">
-        <div><span>Output</span><strong>1080 × 1920</strong></div>
-        <div><span>Ratio</span><strong>9:16</strong></div>
-        <div><span>Type</span><strong>MP4 / JPG</strong></div>
-        <div><span>Length</span><strong>3–8 sec</strong></div>
-      </div>
-      <div class="checklist" aria-label="Export checks">
-        <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg> 9:16 crop</span>
-        <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg> 3–8 seconds</span>
-        <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg> Loop-ready preview</span>
-      </div>
-    </aside>
+    <strong class="drop-h" id="dropHint">Photo or video — any size, we crop & encode</strong>
+    <p id="dropExt">JPG · PNG · WEBP · MP4 · MOV · WEBM</p>
   </div>
-</section>
-
-<section class="section split-section" id="pexels" aria-labelledby="pexels-title">
-  <div class="section-heading">
-    <p class="eyebrow">Pexels workflow</p>
-    <h2 id="pexels-title">No footage yet? Start from a free visual idea.</h2>
-    <p>The original tool includes a Pexels path because many artists need a quick Canvas source before a shoot exists. In this redesign, Pexels is not hidden; it becomes a clear step in the creative workflow.</p>
+  <div class="stock-or" id="stockOr">
+    <span class="stock-or-line"></span>
+    <span class="stock-or-text">or</span>
+    <span class="stock-or-line"></span>
   </div>
-  <div class="pexels-card">
-    <div class="pexels-card-top">
-      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg> Browse moods</span>
-      <a href="https://www.pexels.com" target="_blank" rel="noopener">Powered by Pexels ↗</a>
-    </div>
-    <div class="mood-grid">
-      <button type="button">Aesthetic</button><button type="button">City night</button><button type="button">Nature</button><button type="button">Ocean</button>
-      <button type="button">Smoke</button><button type="button">Texture</button><button type="button">Vintage</button><button type="button">B&amp;W</button>
-    </div>
-    <div class="pexels-flow">
-      <span>Find a free clip</span>›<span>Crop to Canvas</span>›<span>Export for Spotify</span>
-    </div>
-  </div>
-</section>
-
-<section class="section creator-section" aria-labelledby="creator-title">
-  <div class="creator-copy">
-    <p class="eyebrow">Built by an artist</p>
-    <h2 id="creator-title">A practical tool with music next to it.</h2>
-    <p>This section keeps the personal part from spotifyedits.com: the product is made by Anton Zinoviev for artists who do not want signup walls, watermarks or confusing export rules.</p>
-    <a class="small-link" href="https://open.spotify.com/artist/22Y35XRBlb4LwoI3QrJQBt" target="_blank" rel="noopener">Open Anton on Spotify ↗</a>
-  </div>
-  <div class="player-card" aria-label="Anton Zinoviev Spotify player">
-    <div class="player-head">
-      <span class="player-cover"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-      <div>
-        <strong>Anton Zinoviev</strong>
-        <small>Listen while preparing your Canvas</small>
-      </div>
-    </div>
-    <div id="creator-embed-slot" style="height:152px;border-radius:18px;overflow:hidden">
-      <button class="dropzone" id="creatorEmbedPh" type="button" style="width:100%;height:100%;min-height:0;background:var(--graphite);color:#fff;border:0;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:800">▶ Load Spotify player</button>
-    </div>
-  </div>
-</section>
-
-<section class="section specs-section" id="guide" aria-labelledby="guide-title">
-  <div class="section-heading">
-    <p class="eyebrow">SEO guide + verified specs</p>
-    <h2 id="guide-title">Spotify Canvas, Header, Avatar and Cover Art specs in one place.</h2>
-    <p>The page needs these sections for search and for real users. They answer the exact questions people search before uploading visuals to Spotify for Artists.</p>
-  </div>
-  <div class="specs-table" role="table">
-    <div class="spec-row"><strong>Canvas</strong><span>9:16 vertical MP4, 3–8 seconds, recommended 1080×1920.</span></div>
-    <div class="spec-row"><strong>Header</strong><span>2660×1140 minimum, JPG or PNG, keep lower-left visually calm.</span></div>
-    <div class="spec-row"><strong>Avatar</strong><span>750×750 minimum, square source with a circle-safe center.</span></div>
-    <div class="spec-row"><strong>Cover Art</strong><span>3000×3000 ideal, square JPG/PNG, sRGB and clean edges.</span></div>
-    <div class="spec-row"><strong>Privacy</strong><span>The preview can run locally in the browser; no upload is needed for the mock flow.</span></div>
-  </div>
-  <div class="guide-grid">
-    <article class="guide-card"><span class="format-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2"/></svg></span><h3>Canvas</h3><p>Spotify Canvas is a 3–8 second vertical MP4 in the mobile Now Playing view. Recommended export is 1080×1920, 9:16, muted.</p></article>
-    <article class="guide-card"><span class="format-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/></svg></span><h3>Header</h3><p>Spotify artist Header should be at least 2660×1140. Wide profile banner — avoid important text in the lower-left overlay area.</p></article>
-    <article class="guide-card"><span class="format-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M7 20.66c1.4-1.5 3.4-2.5 5-2.5s3.6 1 5 2.5"/></svg></span><h3>Avatar</h3><p>Spotify profile pictures are square images shown as a circle. 750×750 minimum, but center the subject for safe crop.</p></article>
-    <article class="guide-card"><span class="format-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/></svg></span><h3>Cover Art</h3><p>Spotify Cover Art is square. Distributors prefer 3000×3000 sRGB JPEG, under 10 MB, with no important content cut at edges.</p></article>
-  </div>
-</section>
-
-<section class="privacy-section" aria-labelledby="privacy-title">
-  <div>
-    <p class="eyebrow">Why it feels safer</p>
-    <h2 id="privacy-title">Simple rules, visible checks, no hidden upload step.</h2>
-  </div>
-  <div class="privacy-list">
-    <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Files can stay local in the browser</span>
-    <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8M12 17v4"/></svg> Specs remain visible before export</span>
-    <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg> No signup or watermark language stays clear</span>
-  </div>
-</section>
-
-<section class="section faq-section" id="faq" aria-labelledby="faq-title">
-  <div class="section-heading">
-    <p class="eyebrow">Common questions</p>
-    <h2 id="faq-title">Answers artists look for before making Spotify visuals.</h2>
-  </div>
-  <div class="faq-list">
-    <details class="faq-card"><summary>What changes when I choose another format?</summary><p>The specs, upload copy, preview frame, export checklist and CTA all change inside the same workspace. That makes it clear what you are preparing.</p></details>
-    <details class="faq-card"><summary>Can I start from a Pexels video?</summary><p>Yes. Pexels is useful when you do not have your own footage yet. Pick a mood, download a free vertical or cinematic clip, then crop it into Canvas or another Spotify visual format.</p></details>
-    <details class="faq-card"><summary>Where does Spotify Canvas appear?</summary><p>Canvas appears in Spotify's mobile Now Playing view on iOS and Android. It does not replace the desktop cover art.</p></details>
-    <details class="faq-card"><summary>Do I need a distributor to upload Canvas?</summary><p>No. Canvas is managed in Spotify for Artists. You still need access to the artist profile or team for the track.</p></details>
-    <details class="faq-card"><summary>Is my video uploaded to a server?</summary><p>No. All processing happens locally in your browser via WebCodecs H.264. Nothing is sent anywhere — verifiable by going offline after the page loads.</p></details>
-    <details class="faq-card"><summary>How long should a Spotify Canvas be?</summary><p>3 to 8 seconds. Anything outside that range is rejected at upload. The trim slider in this tool prevents you from going over.</p></details>
-  </div>
-</section>
-
-<footer class="footer">
-  <span>Built for Spotify for Artists · WebCodecs H.264 · Local-first preview · Made by <a href="https://open.spotify.com/artist/22Y35XRBlb4LwoI3QrJQBt" target="_blank" rel="noopener">Anton Zinoviev</a></span>
-  <a href="#top">Back to top</a>
-</footer>
-
-</main>
+  <button class="stock-btn" id="stockBtn">
+    <svg id="stockIconVideo" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+    <svg id="stockIconPhoto" class="hidden" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    <span id="stockBtnLabel">Browse free stock videos</span>
+    <span class="stock-btn-tag">Pexels</span>
+  </button>
+</div>
+<input type="file" id="fi" accept="image/*,video/*,.mp4,.mov,.webm" hidden>
 
 <!-- STOCK MODAL -->
-<div class="stock-modal" id="stockModal" role="dialog" aria-label="Browse stock">
+<div class="stock-modal" id="stockModal" role="dialog" aria-label="Browse stock videos">
   <div class="stock-overlay" id="stockOverlay"></div>
   <div class="stock-inner">
     <div class="stock-head">
-      <input type="search" id="stockSearch" placeholder="Search free stock…" autocomplete="off">
+      <input type="search" id="stockSearch" placeholder="Search free stock videos…" autocomplete="off">
       <button class="stock-close" id="stockClose" aria-label="Close">×</button>
     </div>
     <div class="stock-tags" id="stockTags">
@@ -884,8 +839,10 @@ a{color:inherit;text-decoration:none;cursor:pointer}
       <button data-q="nature">Nature</button>
       <button data-q="ocean">Ocean</button>
       <button data-q="smoke">Smoke</button>
+      <button data-q="space">Space</button>
       <button data-q="texture">Texture</button>
       <button data-q="vintage">Vintage</button>
+      <button data-q="retro">Retro</button>
       <button data-q="black and white">B&amp;W</button>
     </div>
     <div class="stock-grid" id="stockGrid"></div>
@@ -896,21 +853,248 @@ a{color:inherit;text-decoration:none;cursor:pointer}
         <span class="stock-preview-counter" id="stockPreviewCounter"></span>
       </div>
       <div class="stock-preview-stage">
-        <button class="stock-preview-nav stock-preview-prev" id="stockPreviewPrev" type="button">‹</button>
+        <button class="stock-preview-nav stock-preview-prev" id="stockPreviewPrev" type="button" aria-label="Previous">‹</button>
         <div class="stock-preview-media" id="stockPreviewMedia"></div>
-        <button class="stock-preview-nav stock-preview-next" id="stockPreviewNext" type="button">›</button>
+        <button class="stock-preview-nav stock-preview-next" id="stockPreviewNext" type="button" aria-label="Next">›</button>
       </div>
       <div class="stock-preview-foot">
         <a class="stock-preview-credit" id="stockPreviewCredit" target="_blank" rel="noopener"></a>
         <div class="stock-preview-actions">
-          <button class="stock-preview-dl" id="stockPreviewDl" type="button">↓ Download original</button>
+          <button class="stock-preview-dl" id="stockPreviewDl" type="button" title="Download original from Pexels">↓ Download original</button>
           <button class="stock-preview-use" id="stockPreviewUse" type="button">Use this →</button>
         </div>
       </div>
     </div>
-    <div class="stock-foot">Free for any use — no attribution required. <a href="https://www.pexels.com" target="_blank" rel="noopener">Powered by Pexels</a>.</div>
+    <div class="stock-foot">
+      Free for any use — no attribution required. <a href="https://www.pexels.com" target="_blank" rel="noopener">Powered by Pexels</a>.
+    </div>
   </div>
 </div>
+
+<!-- WORKSPACE -->
+<div class="ws" id="ws">
+  <div style="text-align:center">
+    <span class="ws-badge" id="badge">IMAGE → CANVAS</span>
+    <span class="ws-source hidden" id="wsSource" role="button" tabindex="0" title="Pick another from Pexels">
+      <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+      <span id="wsSourceText">Pexels</span>
+      <span class="ws-source-arrow" aria-hidden="true">↻</span>
+      <button class="ws-source-x" id="wsSourceX" type="button" title="Remove file">×</button>
+    </span>
+  </div>
+  <div class="crop-container"><div class="crop-wrap" id="wrap"><canvas id="cv"></canvas><button class="crop-x" id="cropX" type="button" aria-label="Remove file and start over" title="Remove file">×</button><div class="crop-hint" id="cropHint" hidden>↔ Drag to choose crop · ⊕ Zoom</div></div></div>
+
+  <div class="panel">
+    <div class="cr"><span class="cl">Zoom</span><input type="range" id="zm" min="10" max="500" value="100"></div>
+
+    <div id="imgCtl">
+      <div class="cr">
+        <span class="cl">Effect</span>
+        <select id="fx">
+          <option value="zoom_in">Slow zoom in</option>
+          <option value="zoom_out">Slow zoom out</option>
+          <option value="pan_up">Pan up</option>
+          <option value="pan_down">Pan down</option>
+          <option value="breathe">Breathe</option>
+          <option value="static">Static</option>
+        </select>
+        <input type="number" id="dur" value="6" min="3" max="8">
+      </div>
+    </div>
+
+    <div id="vidCtl" class="hidden">
+      <div class="cr"><span class="cl">Start</span><input type="range" id="ts" min="0" max="100" value="0" step="0.01"><span class="tv" id="tsD">0:00</span></div>
+      <div class="cr"><span class="cl">End</span><input type="range" id="te" min="0" max="100" value="8" step="0.01"><span class="tv" id="teD">0:08</span></div>
+      <div class="cr"><span class="cl">Clip</span><span class="cv" id="clD">8.0s</span></div>
+    </div>
+
+    <div class="sep"></div>
+    <div class="cr" id="fadeCtl">
+      <span class="cl">Seamless loop</span>
+      <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px">
+        <input type="checkbox" id="cf" style="width:16px;height:16px;cursor:pointer">
+        <span>Crossfade end → start</span>
+      </label>
+      <select id="cfDur" style="margin-left:8px">
+        <option value="0.3">0.3s</option>
+        <option value="0.5" selected>0.5s</option>
+        <option value="0.8">0.8s</option>
+      </select>
+    </div>
+    <div class="cr" id="sloCtl">
+      <span class="cl">Slow-mo</span>
+      <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px">
+        <input type="checkbox" id="slo" style="width:16px;height:16px;cursor:pointer">
+        <span>Play 0.5× with motion blur</span>
+      </label>
+    </div>
+    <div class="sep"></div>
+    <div class="cr"><span class="cl">Size</span><div class="size-row" id="sizeRow">
+      <button class="sb" data-w="720" data-h="1280">720×1280</button>
+      <button class="sb on" data-w="1080" data-h="1920">1080×1920</button>
+    </div></div>
+    <div class="quality-note" id="qualityNote">High quality · H.264 · ~12 Mbps · 30 fps</div>
+    <div class="sep"></div>
+
+    <div class="btn-row">
+      <button class="btn btn-ghost" id="rst" type="button" title="Start over">↺</button>
+      <button class="btn btn-ghost" id="rep" type="button" title="Replace file">⇆</button>
+      <button class="btn btn-dark hidden" id="ej">Save JPEG</button>
+      <button class="btn btn-green" id="exp">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        Export MP4
+      </button>
+    </div>
+    <div class="progress" id="prog"><div id="pf" style="width:0%"></div></div>
+    <div class="status" id="nfo"></div>
+  </div>
+</div>
+
+</section><!-- /m-shell workspace -->
+
+<!-- Creator card section -->
+<section class="m-section" aria-label="About the creator">
+  <div class="m-section-head">
+    <p class="m-section-eyebrow">Built by an artist</p>
+    <h2 class="m-section-title">A practical tool with music next to it.</h2>
+  </div>
+
+<!-- Creator card -->
+<aside class="creator-card" aria-label="About the creator">
+  <div class="creator-text">
+    <div class="creator-eyebrow">
+      <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M12 0a12 12 0 100 24 12 12 0 000-24zm5.5 17.3a.75.75 0 01-1 .25c-2.8-1.7-6.3-2.1-10.4-1.1a.75.75 0 11-.34-1.46c4.5-1 8.4-.6 11.5 1.3.36.22.47.7.24 1.02zm1.5-3.3a.94.94 0 01-1.3.3c-3.2-2-8.1-2.5-11.9-1.4a.94.94 0 11-.5-1.8c4.4-1.2 9.8-.7 13.5 1.6.45.27.6.84.2 1.3zm.1-3.5c-3.8-2.3-10.2-2.5-13.8-1.4a1.13 1.13 0 11-.65-2.16c4.2-1.3 11.2-1 15.6 1.6a1.13 1.13 0 01-1.16 1.95z"/></svg>
+      <span>BUILT BY AN ARTIST, FOR ARTISTS</span>
+    </div>
+    <p class="creator-line">I made this tool because every existing Canvas maker wanted my email and added a watermark on my exports. Made by <a class="creator-name" href="https://open.spotify.com/artist/22Y35XRBlb4LwoI3QrJQBt" target="_blank" rel="noopener"><b>Anton Zinoviev</b> ↗</a> — if you want, you can listen to my music while you're here.</p>
+  </div>
+  <div class="creator-embed-slot">
+    <button class="creator-embed-ph" id="creatorEmbedPh" type="button" aria-label="Load Spotify player">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 0a12 12 0 100 24 12 12 0 000-24zm5.5 17.3a.75.75 0 01-1 .25c-2.8-1.7-6.3-2.1-10.4-1.1a.75.75 0 11-.34-1.46c4.5-1 8.4-.6 11.5 1.3.36.22.47.7.24 1.02zm1.5-3.3a.94.94 0 01-1.3.3c-3.2-2-8.1-2.5-11.9-1.4a.94.94 0 11-.5-1.8c4.4-1.2 9.8-.7 13.5 1.6.45.27.6.84.2 1.3zm.1-3.5c-3.8-2.3-10.2-2.5-13.8-1.4a1.13 1.13 0 11-.65-2.16c4.2-1.3 11.2-1 15.6 1.6a1.13 1.13 0 01-1.16 1.95z"/></svg>
+      <span>▶ Load Spotify player</span>
+    </button>
+  </div>
+</aside>
+</section><!-- /creator m-section -->
+
+<!-- SEO content section -->
+<section class="m-section">
+  <div class="m-section-head">
+    <p class="m-section-eyebrow">Verified specs + full guide</p>
+    <h2 class="m-section-title">Spotify Canvas, Header, Avatar and Cover Art specs in one place.</h2>
+  </div>
+
+<!-- SEO CONTENT: clean, single-style -->
+<section class="seo">
+  <div class="seo-inner">
+
+    <div class="seo-block">
+      <h2 id="specs">Spotify Canvas — verified specs</h2>
+      <dl class="spec-list">
+        <div><dt>Canvas</dt><dd>9:16 vertical MP4 (H.264), <b>3–8 seconds</b>, min <b>720×1280</b>, rec <b>1080×1920</b>, sRGB.</dd></div>
+        <div><dt>Header</dt><dd><b>2660×1140</b> min (3990×1710 retina), JPEG or PNG, sRGB.</dd></div>
+        <div><dt>Avatar</dt><dd><b>750×750</b> min (1500×1500 retina), JPEG or PNG, square. Spotify crops to a circle.</dd></div>
+        <div><dt>Cover Art</dt><dd><b>3000×3000</b> ideal (1600×1600 min), 1:1 square JPEG, sRGB, &lt;10 MB.</dd></div>
+        <div><dt>File format</dt><dd>Canvas: MP4 only. Spotify rejects MOV / WEBM / GIF.</dd></div>
+        <div><dt>Audio</dt><dd>Canvas is muted on Spotify. Audio in your file is ignored.</dd></div>
+      </dl>
+    </div>
+
+    <details class="seo-more">
+      <summary><span>Spotify Canvas — full guide</span></summary>
+      <div class="seo-more-body">
+        <div>
+          <h3 id="what-is">What is a Spotify Canvas?</h3>
+          <p>A <b>Spotify Canvas</b> is a 3–8 second vertical looping video that replaces a track's cover art in the Now Playing view on the Spotify mobile app. Spotify launched Canvas in 2019 and made it free for every artist. Tracks with a Canvas see a measurable lift in shares, saves, playlist adds and time spent. Canvas only plays on iOS and Android — not on desktop, web player, or smart speakers.</p>
+          <p>Canvas is uploaded through <a href="https://artists.spotify.com/canvas" target="_blank" rel="noopener">Spotify for Artists</a>, not through your distributor. You don't need <b>DistroKid</b>, Tunecore, Amuse or CD Baby to add it — only access to the Spotify for Artists team for the track.</p>
+        </div>
+
+        <div>
+          <h3 id="how-to">How to make a Spotify Canvas</h3>
+          <ol>
+            <li>Pick the <b>Canvas</b> format tab at the top.</li>
+            <li>Drop a photo (JPG/PNG/WEBP) or video (MP4/MOV/WEBM). For a still photo, pick an effect — Slow zoom, Pan, Breathe, or Static.</li>
+            <li>Adjust crop. For video, set Start/End — clip must be 3–8 seconds.</li>
+            <li>Tick <b>Seamless loop</b> and pick crossfade length (0.3s / 0.5s / 0.8s).</li>
+            <li>Click <b>Export MP4</b>. Encodes locally via WebCodecs H.264. Upload to Spotify for Artists → track → Canvas.</li>
+          </ol>
+        </div>
+
+        <div>
+          <h3 id="upload">How to upload to Spotify</h3>
+          <ol>
+            <li>Sign in at <a href="https://artists.spotify.com" target="_blank" rel="noopener">artists.spotify.com</a>.</li>
+            <li>Open Music → Releases, pick the track.</li>
+            <li>Click the <b>Canvas</b> tab.</li>
+            <li>Upload the 9:16 MP4. Save and publish.</li>
+          </ol>
+        </div>
+
+        <div>
+          <h3 id="loop">Loop styles</h3>
+          <p>Spotify's guidelines describe three: <b>Continuous Loop</b> — end blends into start (what this tool produces). <b>Hard Cut</b> — visible restart jitter. <b>Rebound</b> — ping-pong forward/reverse. Continuous looks the most professional.</p>
+        </div>
+
+        <div>
+          <h3 id="every-format">Header / Avatar / Cover Art</h3>
+          <p><b>Header</b> sits at the top of your artist page. Min 2660×1140. Artist name + avatar overlay the lower-left — keep that area visually clean.</p>
+          <p><b>Avatar</b> is the round profile picture. Min 750×750, rec 1500×1500. Center your subject.</p>
+          <p><b>Cover Art</b> is enforced at the distributor level: 3000×3000 ideal, sRGB JPEG, &lt;10 MB.</p>
+        </div>
+
+        <div>
+          <h3 id="why-different">Why spotifyedits.com is different</h3>
+          <ul>
+            <li><b>Truly free, no signup.</b> No email, no DistroKid account.</li>
+            <li><b>Files never leave your device.</b> Encoding runs in the browser via WebCodecs H.264.</li>
+            <li><b>All four formats in one tool.</b> Canvas, Header, Avatar, Cover Art — exact specs.</li>
+            <li><b>Real seamless-loop crossfade,</b> not a preview trick — math is in the encoded MP4.</li>
+            <li><b>No watermark, ever.</b></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 id="downloader">Note on "Canvas downloaders"</h3>
+          <p>spotifyedits.com is a Canvas <i>maker</i>, not a downloader. Other artists' Canvases are copyrighted. You can re-download your own Canvas from Spotify for Artists at any time.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="seo-more">
+      <summary><span id="faq">FAQ — 16 common questions</span></summary>
+      <div class="seo-more-body">
+        <div class="faq">
+          <details><summary>What are the exact Spotify Canvas dimensions?</summary><p>Vertical 9:16 MP4. Min 720×1280, rec 1080×1920. Duration 3–8 seconds.</p></details>
+          <details><summary>How long does a Spotify Canvas have to be?</summary><p>3 to 8 seconds. Outside that range is rejected at upload.</p></details>
+          <details><summary>What is the aspect ratio for Spotify Canvas?</summary><p>9:16 — same vertical ratio as TikTok / Reels. The crop frame is locked to 9:16.</p></details>
+          <details><summary>Is spotifyedits.com really free, with no watermark?</summary><p>Yes. No signup, no email, no watermark. Runs entirely in your browser via WebCodecs.</p></details>
+          <details><summary>How do I make a seamless looping Canvas?</summary><p>Tick "Seamless loop" before export and pick a crossfade length. The tool blends last frames into first frames using cosine easing.</p></details>
+          <details><summary>What Spotify formats does this tool support?</summary><p>Canvas (9:16 MP4), Header (2660×1140), Avatar (750×750 or 1500×1500), Cover Art (1600×1600 or 3000×3000).</p></details>
+          <details><summary>Why does my Canvas upload keep failing?</summary><p>Three common reasons: wrong aspect ratio (must be 9:16), wrong duration (3–8 sec), or wrong format (must be MP4). This tool enforces all three.</p></details>
+          <details><summary>What is the Spotify profile picture / avatar size?</summary><p>Min 750×750, rec 1500×1500 for retina. JPEG or PNG, sRGB, square.</p></details>
+          <details><summary>What is the Spotify Header size?</summary><p>2660×1140 min (≈2.33:1), JPEG or PNG. Artist name + avatar overlay the lower-left.</p></details>
+          <details><summary>What size should Spotify Cover Art be?</summary><p>1:1 square, 3000×3000 ideal. JPEG, sRGB, under 10 MB.</p></details>
+          <details><summary>Is my video uploaded to a server?</summary><p>No. All processing happens locally in your browser. Nothing is sent anywhere.</p></details>
+          <details><summary>Can I download someone else's Spotify Canvas?</summary><p>No, this is a maker not a downloader. Other artists' Canvases are copyrighted. You can re-download your own from Spotify for Artists.</p></details>
+          <details><summary>Do I need DistroKid, Tunecore or Amuse?</summary><p>No. Canvas is uploaded through Spotify for Artists, not through your distributor.</p></details>
+          <details><summary>What's Continuous vs Hard Cut vs Rebound?</summary><p>Continuous — seamless blend (what we produce). Hard Cut — visible jump. Rebound — ping-pong forward/reverse.</p></details>
+          <details><summary>Where does Spotify Canvas appear?</summary><p>Now Playing view on Spotify mobile (iOS / Android). Not on desktop, web player, or smart speakers.</p></details>
+          <details><summary>Which browsers work?</summary><p>Chrome 94+, Edge 94+, Brave, Opera, Arc, Safari 16.4+. Firefox doesn't support WebCodecs MP4 yet.</p></details>
+        </div>
+      </div>
+    </details>
+
+  </div>
+</section>
+</section><!-- /seo m-section -->
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>Built for <a href="https://artists.spotify.com" target="_blank" rel="noopener">Spotify for Artists</a> · WebCodecs H.264 · Local-first preview · Made by <a href="https://open.spotify.com/artist/22Y35XRBlb4LwoI3QrJQBt" target="_blank" rel="noopener">Anton Zinoviev</a></p>
+  <a href="#top">Back to top</a>
+</footer>
 
 <video id="srcVid" style="display:none" muted playsinline></video>
 <video id="srcVid2" style="display:none" muted playsinline></video>
@@ -1717,3 +1901,4 @@ if(_wsSrc){
 }
 </script>
 </body>
+</html>
