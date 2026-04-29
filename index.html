@@ -665,14 +665,17 @@ body{font-family:var(--fs-system);background:var(--bg);color:var(--text);font-fe
 .workspace-shell .hero-badge{display:none}
 .workspace-shell .hero h1{display:none}
 .workspace-shell .hero .sub{display:none}
-.workspace-shell .formats{background:var(--bg-soft);border:1px solid var(--line);padding:6px;border-radius:14px}
-.workspace-shell .fmt{padding:12px 18px;border-radius:10px;color:var(--text-soft);transition:all .15s}
-.workspace-shell .fmt small{color:var(--text-faint);font-family:var(--fs-mono);font-size:9px}
-.workspace-shell .fmt.on{background:var(--text);color:var(--bg);box-shadow:none}
-.workspace-shell .fmt.on small{color:var(--bg)}
-.workspace-shell .specs-strip{margin:18px 0 8px;display:flex;gap:14px;flex-wrap:wrap}
-.workspace-shell .ss{font-family:var(--fs-mono);font-size:11px;color:var(--text-faint)}
-.workspace-shell .fmt-rule{font-size:14px;color:var(--text-soft);margin:8px 0 24px;max-width:580px;line-height:1.55;text-align:left}
+/* Format tabs — Manus 4-col grid */
+.workspace-shell .formats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.72rem;background:transparent;padding:0;margin-bottom:.8rem;border-radius:0}
+.workspace-shell .fmt{padding:.9rem 1rem;border-radius:19px;background:var(--panel);border:1px solid var(--line);color:var(--text);transition:all .15s;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:.2rem;font-weight:600}
+.workspace-shell .fmt small{color:var(--text-faint);font-family:var(--fs-mono);font-size:10px;font-weight:500;letter-spacing:.02em;text-transform:uppercase;margin-top:.2rem}
+.workspace-shell .fmt:hover{border-color:var(--green-line)}
+.workspace-shell .fmt.on{background:var(--green-soft);border-color:var(--green-line);color:var(--green-deep);box-shadow:none}
+.workspace-shell .fmt.on small{color:var(--green-deep)}
+.workspace-shell .specs-strip{margin:18px 0 8px;display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start}
+.workspace-shell .ss{font-family:var(--fs-mono);font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.04em}
+.workspace-shell .fmt-rule{font-size:15px;color:var(--text-soft);margin:14px 0 28px;max-width:680px;line-height:1.55;text-align:left}
+@media(max-width:640px){.workspace-shell .formats{grid-template-columns:repeat(2,1fr)}}
 
 /* Drop zone restyle */
 .workspace-shell .drop-area,.workspace-shell .ws{max-width:520px;margin:0 auto}
@@ -694,13 +697,13 @@ body{font-family:var(--fs-system);background:var(--bg);color:var(--text);font-fe
 
 /* Split section — Manus values */
 .split-section{display:grid;grid-template-columns:minmax(0,.95fr) minmax(360px,1.05fr);gap:clamp(1.2rem,3vw,2.4rem);align-items:start;background:oklch(100% .003 86/.84);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:34px;padding:clamp(1.2rem,3vw,2rem);box-shadow:var(--shadow-soft)}
-.split-pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.split-pillrow span{padding:7px 13px;background:var(--bg-soft);border:1px solid var(--line);border-radius:999px;font-size:12px;color:var(--text-soft);font-weight:500}
-.split-steps{display:flex;flex-direction:column;gap:14px}
-.split-step{display:flex;gap:14px;align-items:start;padding:18px 20px;background:var(--bg-soft);border:1px solid var(--line);border-radius:14px}
-.split-step-num{flex:0 0 28px;width:28px;height:28px;background:var(--green-soft);color:var(--green-deep);border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;font-family:var(--fs-mono)}
-.split-step-title{font-weight:600;font-size:14px;display:block;margin-bottom:4px}
-.split-step-desc{font-size:13px;color:var(--text-soft);line-height:1.5}
+.split-pillrow{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}
+.split-pillrow span{padding:.5rem 1rem;background:var(--bg-soft);border:1px solid var(--line);border-radius:999px;font-size:12.5px;color:var(--text);font-weight:600}
+.split-steps{display:grid;gap:.7rem}
+.split-step{display:flex;gap:14px;align-items:flex-start;padding:1.1rem 1.25rem;background:var(--bg-soft);border:1px solid var(--line);border-radius:20px}
+.split-step-num{flex:0 0 32px;width:32px;height:32px;background:var(--green-soft);color:var(--green-deep);border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800;font-family:var(--fs-system)}
+.split-step-title{font-weight:700;font-size:14.5px;display:block;margin-bottom:4px;color:var(--text)}
+.split-step-desc{font-size:13.5px;color:var(--text-soft);line-height:1.5}
 @media(max-width:780px){.split-section{grid-template-columns:1fr;gap:24px;padding:24px}}
 
 /* Creator section — Manus */
@@ -716,21 +719,32 @@ body{font-family:var(--fs-system);background:var(--bg);color:var(--text);font-fe
 
 /* Specs section — Manus */
 .specs-section{padding:clamp(1.2rem,3vw,2rem);background:oklch(100% .003 86/.84);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:34px;box-shadow:var(--shadow-soft)}
-.specs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px}
-.specs-card{padding:22px;background:var(--bg-soft);border:1px solid var(--line);border-radius:14px}
-.specs-card h3{font-size:14px;font-weight:700;margin-bottom:6px;font-family:var(--fs-system)}
-.specs-card p{font-size:13px;color:var(--text-soft);line-height:1.5;margin:0}
-.specs-card .specs-tag{display:inline-block;font-family:var(--fs-mono);font-size:10px;color:var(--green-deep);margin-bottom:8px;letter-spacing:.05em;text-transform:uppercase;font-weight:600}
+.specs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.85rem;margin-top:1.4rem}
+.specs-card{padding:1.4rem;background:var(--bg-soft);border:1px solid var(--line);border-radius:20px}
+.specs-card h3{font-size:15px;font-weight:800;margin:0 0 .4rem;font-family:var(--fs-system);letter-spacing:-.01em}
+.specs-card p{font-size:13.5px;color:var(--text-soft);line-height:1.55;margin:0}
+.specs-card .specs-tag{display:inline-block;font-family:var(--fs-mono);font-size:10px;color:var(--green-deep);margin-bottom:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
 
 /* Privacy section — Manus gradient */
 .privacy-section{margin-top:clamp(68px,8vw,108px);padding:clamp(1.2rem,3vw,2rem);background:linear-gradient(135deg,var(--green-soft),oklch(100% .003 86/.86));border:1px solid var(--green-line);border-radius:34px;box-shadow:var(--shadow-soft)}
 .privacy-section .section-title{margin-bottom:14px}
-.privacy-rules{display:flex;flex-direction:column;gap:12px;margin-top:20px}
-.privacy-rule{display:flex;gap:12px;align-items:start;font-size:14px;color:var(--text)}
-.privacy-rule::before{content:"";flex:0 0 18px;width:18px;height:18px;background:var(--green-deep);border-radius:50%;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round'><polyline points='3 8.5 6.5 12 13 4'/></svg>");background-position:center;background-repeat:no-repeat;background-size:60%;margin-top:1px}
+.privacy-rules{display:grid;gap:.7rem;margin-top:20px}
+.privacy-rule{display:flex;gap:14px;align-items:flex-start;font-size:15px;color:var(--text);padding:14px 18px;background:oklch(100% .003 86/.6);border:1px solid var(--green-line);border-radius:16px;line-height:1.5}
+.privacy-rule::before{content:"";flex:0 0 22px;width:22px;height:22px;background:var(--green-deep);border-radius:50%;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round'><polyline points='3 8.5 6.5 12 13 4'/></svg>");background-position:center;background-repeat:no-repeat;background-size:60%;margin-top:1px}
 
 /* FAQ section — Manus */
 .faq-section{padding:clamp(1.2rem,3vw,2rem);background:oklch(100% .003 86/.84);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:34px;box-shadow:var(--shadow-soft)}
+/* Style our existing details-based FAQ as Manus cards */
+.faq-section .seo,.faq-section .seo-inner{padding:0;max-width:none;gap:.7rem;margin:0}
+.faq-section .seo-block{border-radius:20px;padding:.95rem 1.2rem;background:var(--bg-soft);border:1px solid var(--line);border-top:1px solid var(--line)}
+.faq-section .seo-more{background:var(--bg-soft);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.faq-section .seo-more summary{padding:1rem 1.2rem;font-weight:700;font-size:15px}
+.faq-section .seo-more summary:hover{background:var(--bg)}
+.faq-section .seo-more-body{padding:0 1.2rem 1.2rem}
+.faq-section .faq{display:flex;flex-direction:column;gap:.5rem;border-top:none}
+.faq-section .faq details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:0 1rem;border-bottom:1px solid var(--line)}
+.faq-section .faq summary{padding:.85rem 0;font-weight:600;font-size:14px}
+.faq-section .faq details p{padding:0 0 .85rem;font-size:13.5px}
 .faq-section .seo{padding:0;max-width:none}
 .faq-section .seo-inner{gap:18px}
 .faq-section .seo-block,.faq-section .seo-more{background:var(--bg-soft);border:1px solid var(--line)}
