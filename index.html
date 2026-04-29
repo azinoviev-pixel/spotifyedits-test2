@@ -609,8 +609,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);-webkit-font
 }
 
 /* ============================================================
-   v18 — Manus-inspired warm landing redesign
-   Overlays the existing tool styles with a marketing shell.
+   v18 — Manus design tokens applied verbatim from /assets/index-BUmo8ivg.css
    ============================================================ */
 :root{
   --bg:oklch(98.2% .009 86);
@@ -631,36 +630,37 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);-webkit-font
 }
 body{font-family:var(--fs-system);background:var(--bg);color:var(--text);font-feature-settings:"ss01","ss02"}
 
-/* Topbar */
-.site-shell{max-width:1100px;margin:0 auto;padding:24px 28px}
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;background:var(--panel);border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow-small);margin-bottom:48px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:700;font-size:15px}
-.brand-mark{width:32px;height:32px;background:var(--green);color:#fff;border-radius:10px;display:grid;place-items:center}
-.nav-links{display:flex;gap:28px}
-.nav-links a{color:var(--text-soft);text-decoration:none;font-size:14px;font-weight:500;transition:color .15s}
-.nav-links a:hover{color:var(--green-deep)}
-.nav-cta{padding:10px 20px;background:var(--text);color:var(--bg);text-decoration:none;border-radius:999px;font-size:13px;font-weight:600;transition:transform .15s}
-.nav-cta:hover{transform:translateY(-1px)}
-@media(max-width:640px){.nav-links{display:none}.topbar{padding:10px 14px;margin-bottom:28px}}
+/* Site shell + topbar — verbatim from Manus */
+.site-shell{max-width:1180px;margin:0 auto;padding:0 clamp(16px,3vw,32px)}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:22px 0 16px}
+.brand{display:inline-flex;align-items:center;gap:.62rem;color:var(--text);text-decoration:none;font-weight:850;letter-spacing:-.035em;font-size:18px}
+.brand-mark{width:34px;height:34px;background:var(--green);color:#fff;border-radius:12px;display:grid;place-items:center}
+.nav-links{display:flex;align-items:center;gap:.1rem;padding:.28rem;background:oklch(100% .003 86/.76);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:999px}
+.nav-links a{color:var(--text-soft);text-decoration:none;font-size:13.5px;font-weight:600;padding:.5rem .9rem;border-radius:999px;transition:all .15s}
+.nav-links a:hover{color:var(--text);background:var(--bg-soft)}
+.nav-cta{padding:.72rem 1.1rem;background:var(--text);color:var(--bg);text-decoration:none;border-radius:999px;font-size:13.5px;font-weight:700;letter-spacing:-.005em;transition:transform .15s,background .15s}
+.nav-cta:hover{transform:translateY(-1px);background:var(--green-deep)}
+@media(max-width:780px){.nav-links{display:none}.topbar{padding:14px 0 10px;flex-wrap:wrap}}
 
-/* Hero */
-.intro-section{display:grid;grid-template-columns:1.6fr .8fr;gap:48px;align-items:end;margin-bottom:72px}
-.eyebrow{font-size:12px;font-weight:600;color:var(--green-deep);text-transform:uppercase;letter-spacing:.12em;margin-bottom:18px;font-family:var(--fs-system)}
-.intro-section h1{font-family:var(--fs-system);font-size:clamp(36px,5.4vw,64px);line-height:1.05;letter-spacing:-.02em;font-weight:700;color:var(--text);margin:0 0 22px}
-.intro-lede{font-size:17px;line-height:1.55;color:var(--text-soft);max-width:580px}
-.intro-notes{display:flex;flex-direction:column;gap:14px;padding:24px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);box-shadow:var(--shadow-small)}
-.intro-notes>span{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-soft)}
-.intro-notes svg{color:var(--green-deep)}
-@media(max-width:780px){.intro-section{grid-template-columns:1fr;gap:24px;margin-bottom:48px}}
+/* Hero / intro — Manus values */
+.intro-section{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:clamp(1.5rem,5vw,4rem);padding:clamp(38px,7vw,72px) 0 24px;margin:0}
+.intro-copy{max-width:860px}
+.eyebrow{font-size:11px;font-weight:700;color:var(--green-deep);text-transform:uppercase;letter-spacing:.16em;margin-bottom:14px}
+.intro-section h1{font-family:var(--fs-system);font-size:clamp(38px,6vw,76px);line-height:1.02;letter-spacing:-.035em;font-weight:800;color:var(--text);margin:0}
+.intro-lede{max-width:780px;margin:1.35rem 0 0;font-size:clamp(15px,1.6vw,19px);line-height:1.5;color:var(--text-soft)}
+.intro-notes{display:grid;grid-template-columns:1fr;gap:.6rem;padding:1rem 1.1rem;min-width:200px;background:oklch(100% .003 86/.76);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-small)}
+.intro-notes>span{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--text);font-weight:600}
+.intro-notes svg{color:var(--green-deep);flex:0 0 16px}
+@media(max-width:860px){.intro-section{grid-template-columns:1fr;align-items:start}.intro-notes{grid-template-columns:repeat(2,minmax(0,1fr));width:100%}}
 
-/* Section base */
-.section{margin-bottom:80px}
-.section-head{margin-bottom:32px}
-.section-title{font-size:clamp(28px,3.6vw,44px);line-height:1.1;letter-spacing:-.015em;font-weight:700;margin:8px 0 14px}
-.section-lede{font-size:15px;line-height:1.6;color:var(--text-soft);max-width:640px}
+/* Section base — Manus */
+.section{margin-top:clamp(68px,8vw,108px)}
+.section-head{margin-bottom:1.4rem;display:flex;flex-direction:column;gap:.4rem}
+.section-title{font-size:clamp(28px,4vw,52px);line-height:1.04;letter-spacing:-.025em;font-weight:800;margin:0}
+.section-lede{font-size:15px;line-height:1.55;color:var(--text-soft);max-width:680px;margin:0}
 
-/* Workspace shell — wraps the actual tool */
-.workspace-shell{padding:36px;background:var(--panel);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow-soft);margin-bottom:80px}
+/* Workspace shell — Manus values */
+.workspace-shell{margin-top:clamp(1.4rem,3vw,2.4rem);padding:clamp(1rem,2vw,1.25rem);background:oklch(100% .003 86/.84);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:34px;box-shadow:var(--shadow-soft)}
 .workspace-shell .hero{padding:0;text-align:left;margin-bottom:24px;max-width:none}
 .workspace-shell .hero-badge{display:none}
 .workspace-shell .hero h1{display:none}
@@ -692,8 +692,8 @@ body{font-family:var(--fs-system);background:var(--bg);color:var(--text);font-fe
 .workspace-shell .btn-dark{background:var(--text);color:var(--bg);border-radius:12px;font-weight:600}
 .workspace-shell .btn-ghost{background:var(--bg-soft);color:var(--text-soft);border:1px solid var(--line);border-radius:12px}
 
-/* Split section (Pexels intro) */
-.split-section{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:36px;box-shadow:var(--shadow-small)}
+/* Split section — Manus values */
+.split-section{display:grid;grid-template-columns:minmax(0,.95fr) minmax(360px,1.05fr);gap:clamp(1.2rem,3vw,2.4rem);align-items:start;background:oklch(100% .003 86/.84);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:34px;padding:clamp(1.2rem,3vw,2rem);box-shadow:var(--shadow-soft)}
 .split-pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .split-pillrow span{padding:7px 13px;background:var(--bg-soft);border:1px solid var(--line);border-radius:999px;font-size:12px;color:var(--text-soft);font-weight:500}
 .split-steps{display:flex;flex-direction:column;gap:14px}
@@ -703,8 +703,8 @@ body{font-family:var(--fs-system);background:var(--bg);color:var(--text);font-fe
 .split-step-desc{font-size:13px;color:var(--text-soft);line-height:1.5}
 @media(max-width:780px){.split-section{grid-template-columns:1fr;gap:24px;padding:24px}}
 
-/* Creator section */
-.creator-section{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:36px;box-shadow:var(--shadow-small)}
+/* Creator section — Manus */
+.creator-section{display:grid;grid-template-columns:minmax(0,.86fr) minmax(360px,1.14fr);align-items:stretch;gap:clamp(1rem,4vw,3rem);background:oklch(100% .003 86/.84);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:34px;padding:clamp(1.2rem,3vw,2rem);box-shadow:var(--shadow-soft)}
 .creator-section .creator-card{display:contents}
 .creator-section .creator-text{padding:0}
 .creator-section .creator-eyebrow{color:var(--green-deep);font-size:11px;font-family:var(--fs-system);font-weight:600;letter-spacing:.12em}
@@ -714,23 +714,23 @@ body{font-family:var(--fs-system);background:var(--bg);color:var(--text);font-fe
 .creator-section .creator-embed,.creator-section .creator-embed-ph{height:152px;border-radius:14px}
 @media(max-width:780px){.creator-section{grid-template-columns:1fr;gap:24px;padding:24px}}
 
-/* Specs section */
-.specs-section{padding:36px;background:var(--panel);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow-small)}
+/* Specs section — Manus */
+.specs-section{padding:clamp(1.2rem,3vw,2rem);background:oklch(100% .003 86/.84);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:34px;box-shadow:var(--shadow-soft)}
 .specs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px}
 .specs-card{padding:22px;background:var(--bg-soft);border:1px solid var(--line);border-radius:14px}
 .specs-card h3{font-size:14px;font-weight:700;margin-bottom:6px;font-family:var(--fs-system)}
 .specs-card p{font-size:13px;color:var(--text-soft);line-height:1.5;margin:0}
 .specs-card .specs-tag{display:inline-block;font-family:var(--fs-mono);font-size:10px;color:var(--green-deep);margin-bottom:8px;letter-spacing:.05em;text-transform:uppercase;font-weight:600}
 
-/* Privacy section */
-.privacy-section{margin-bottom:80px;padding:36px;background:var(--green-soft);border:1px solid var(--green-line);border-radius:24px}
+/* Privacy section — Manus gradient */
+.privacy-section{margin-top:clamp(68px,8vw,108px);padding:clamp(1.2rem,3vw,2rem);background:linear-gradient(135deg,var(--green-soft),oklch(100% .003 86/.86));border:1px solid var(--green-line);border-radius:34px;box-shadow:var(--shadow-soft)}
 .privacy-section .section-title{margin-bottom:14px}
 .privacy-rules{display:flex;flex-direction:column;gap:12px;margin-top:20px}
 .privacy-rule{display:flex;gap:12px;align-items:start;font-size:14px;color:var(--text)}
 .privacy-rule::before{content:"";flex:0 0 18px;width:18px;height:18px;background:var(--green-deep);border-radius:50%;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round'><polyline points='3 8.5 6.5 12 13 4'/></svg>");background-position:center;background-repeat:no-repeat;background-size:60%;margin-top:1px}
 
-/* FAQ section */
-.faq-section{padding:36px;background:var(--panel);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow-small)}
+/* FAQ section — Manus */
+.faq-section{padding:clamp(1.2rem,3vw,2rem);background:oklch(100% .003 86/.84);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:34px;box-shadow:var(--shadow-soft)}
 .faq-section .seo{padding:0;max-width:none}
 .faq-section .seo-inner{gap:18px}
 .faq-section .seo-block,.faq-section .seo-more{background:var(--bg-soft);border:1px solid var(--line)}
@@ -740,7 +740,7 @@ body{font-family:var(--fs-system);background:var(--bg);color:var(--text);font-fe
 .faq-section .faq summary{font-weight:600}
 
 /* Footer */
-.footer{margin-top:48px;padding:28px;background:var(--panel);border:1px solid var(--line);border-radius:18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.footer{margin-top:clamp(48px,6vw,80px);margin-bottom:32px;padding:24px clamp(16px,2vw,28px);background:oklch(100% .003 86/.84);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;box-shadow:var(--shadow-small)}
 .footer p{font-size:12px;color:var(--text-soft)}
 .footer a{color:var(--text);text-decoration:underline}
 
