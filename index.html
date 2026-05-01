@@ -341,7 +341,7 @@ a{color:inherit;text-decoration:none;cursor:pointer}
 .format-tab small{display:block;margin-top:.15rem;color:var(--graphite-soft);font-size:.76rem;font-weight:720}
 @media(max-width:780px){.format-tabs{grid-template-columns:repeat(2,1fr)}}
 
-.spec-strip{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:1px;overflow:hidden;border:1px solid var(--warm-line);border-radius:18px;background:var(--warm-line)}
+.spec-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;overflow:hidden;border:1px solid var(--warm-line);border-radius:18px;background:var(--warm-line)}
 .spec-strip .ss{padding:.9rem 1rem;background:oklch(.986 .006 86);color:var(--graphite-soft);font-size:.86rem;font-weight:760;display:block}
 .spec-strip strong{color:var(--graphite)}
 @media(max-width:780px){.spec-strip{grid-template-columns:repeat(2,1fr)}}
@@ -372,6 +372,9 @@ a{color:inherit;text-decoration:none;cursor:pointer}
 .device-stage{display:grid;place-items:center;min-height:430px;margin:1rem 0;border:1px solid var(--warm-line);border-radius:26px;background:linear-gradient(135deg,oklch(.205 .018 105 / .03),transparent),var(--warm-soft);position:relative}
 .preview-frame{position:relative;display:grid;place-items:center;overflow:hidden;border:1px solid oklch(.205 .018 105 / .16);background:linear-gradient(140deg,oklch(.28 .035 105),oklch(.18 .018 105)),var(--graphite);color:#fff;box-shadow:0 24px 70px oklch(.2 .02 105 / .22)}
 .preview-frame--canvas{width:190px;height:338px;border-radius:30px}
+.preview-frame--header{width:min(430px,92%);aspect-ratio:2660/1140;border-radius:24px}
+.preview-frame--avatar{width:260px;height:260px;border-radius:50%}
+.preview-frame--cover{width:280px;height:280px;border-radius:14px}
 .preview-grid{position:absolute;inset:0;opacity:.2;background-image:linear-gradient(white 1px,transparent 1px),linear-gradient(90deg,white 1px,transparent 1px);background-size:32px 32px}
 .preview-content{position:relative;z-index:2;display:grid;gap:.25rem;text-align:center;text-shadow:0 2px 18px oklch(0 0 0 / .28)}
 .preview-content span{font-size:.74rem;font-weight:780;opacity:.74;text-transform:uppercase;letter-spacing:.12em}
@@ -726,10 +729,10 @@ a{color:inherit;text-decoration:none;cursor:pointer}
       </div>
 
       <div class="device-stage">
-        <div class="preview-frame preview-frame--canvas">
+        <div id="previewFrame" class="preview-frame preview-frame--canvas">
           <div class="preview-grid"></div>
-          <div class="phone-bar"></div>
-          <div class="preview-content"><span>9 : 16</span><strong>Canvas</strong></div>
+          <div id="previewPhoneBar" class="phone-bar"></div>
+          <div class="preview-content"><span id="previewEyebrow">9 : 16</span><strong id="previewTitle">Canvas</strong></div>
         </div>
       </div>
 
@@ -746,12 +749,12 @@ a{color:inherit;text-decoration:none;cursor:pointer}
 
       <div class="export-summary">
         <div><span>Format</span><strong id="esFmt">Canvas MP4</strong></div>
-        <div><span>Aspect</span><strong>9 : 16</strong></div>
-        <div><span>Length</span><strong>3 – 8 s</strong></div>
-        <div><span>Codec</span><strong>H.264</strong></div>
+        <div><span>Aspect</span><strong id="esAspect">9 : 16</strong></div>
+        <div><span>Length</span><strong id="esLen">3 – 8 s</strong></div>
+        <div><span>Codec</span><strong id="esCodec">H.264</strong></div>
       </div>
 
-      <div class="checklist">
+      <div id="checklist" class="checklist">
         <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Local encode</span>
         <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Seamless loop</span>
         <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> sRGB · clean edges</span>
@@ -1063,6 +1066,37 @@ function setFmt(f){
     setupCrop(srcVid.videoWidth,srcVid.videoHeight);
   }
   // Note: format-aware re-search happens automatically next time user opens Pexels modal
+  updPreviewPanel(f);
+}
+
+const PREV_CFG={
+  canvas:{cls:'preview-frame--canvas',eyebrow:'9 : 16',title:'Canvas',phoneBar:true,
+          fmt:'Canvas MP4',aspect:'9 : 16',len:'3 – 8 s',codec:'H.264',
+          checklist:['Local encode','Seamless loop','sRGB · clean edges']},
+  header:{cls:'preview-frame--header',eyebrow:'2660 × 1140',title:'Header',phoneBar:false,
+          fmt:'Header JPEG',aspect:'7 : 3',len:'Static',codec:'JPEG q.98',
+          checklist:['Lower-left clear','sRGB','Local encode']},
+  avatar:{cls:'preview-frame--avatar',eyebrow:'1 : 1',title:'Avatar',phoneBar:false,
+          fmt:'Avatar JPEG',aspect:'1 : 1',len:'Static',codec:'JPEG q.98',
+          checklist:['Circle-safe centre','sRGB','Local encode']},
+  cover:{cls:'preview-frame--cover',eyebrow:'1 : 1',title:'Cover Art',phoneBar:false,
+         fmt:'Cover JPEG',aspect:'1 : 1',len:'Static',codec:'JPEG q.98',
+         checklist:['3000 × 3000','sRGB','Local encode']}
+};
+function updPreviewPanel(f){
+  const c=PREV_CFG[f];if(!c)return;
+  const fr=$('#previewFrame');if(fr)fr.className='preview-frame '+c.cls;
+  const pb=$('#previewPhoneBar');if(pb)pb.style.display=c.phoneBar?'':'none';
+  const eb=$('#previewEyebrow');if(eb)eb.textContent=c.eyebrow;
+  const tt=$('#previewTitle');if(tt)tt.textContent=c.title;
+  const ef=$('#esFmt');if(ef)ef.textContent=c.fmt;
+  const ea=$('#esAspect');if(ea)ea.textContent=c.aspect;
+  const el=$('#esLen');if(el)el.textContent=c.len;
+  const ec=$('#esCodec');if(ec)ec.textContent=c.codec;
+  const cl=$('#checklist');
+  if(cl){
+    cl.innerHTML=c.checklist.map(t=>`<span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> ${t}</span>`).join('');
+  }
 }
 document.querySelectorAll('.fmt').forEach(b=>{b.onclick=()=>setFmt(b.dataset.fmt)});
 
