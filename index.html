@@ -326,7 +326,7 @@ a{color:inherit;text-decoration:none;cursor:pointer}
 .intro-notes svg{color:var(--green-deep);flex:0 0 14px}
 @media(max-width:860px){.intro-section{grid-template-columns:1fr}.intro-notes{grid-template-columns:repeat(2,1fr)}}
 
-.workspace-shell{margin-top:clamp(1.4rem,3vw,2.4rem);padding:clamp(1rem,2vw,1.25rem);border:1px solid var(--warm-line);border-radius:34px;background:oklch(1 .003 86 / .84);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:var(--shadow-soft)}
+.workspace-shell{margin-top:clamp(1.4rem,3vw,2.4rem);padding:clamp(1rem,2vw,1.25rem);border:1px solid var(--warm-line);border-radius:34px;background:oklch(.997 .005 86);box-shadow:0 8px 24px oklch(.28 .024 86 / .07)}
 .workspace-head{display:flex;flex-direction:row;align-items:start;justify-content:space-between;gap:1rem;padding:.4rem .25rem 1rem}
 .workspace-head h2{margin:0;color:var(--graphite);letter-spacing:-.052em;line-height:.99;font-size:clamp(2rem,4vw,3.55rem);font-weight:850}
 .small-link{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--warm-line);background:oklch(1 .003 86 / .72);color:var(--graphite);padding:.62rem .9rem;border-radius:999px;font-size:.78rem;font-weight:780;transition:transform .18s}
@@ -458,7 +458,7 @@ a{color:inherit;text-decoration:none;cursor:pointer}
 .workspace-grid:has(#ws.on) #dropArea{display:none}
 
 .crop-container{display:flex;justify-content:center;margin:0 0 .8rem 0}
-.crop-wrap{position:relative;overflow:hidden;border-radius:22px;box-shadow:var(--shadow-soft);touch-action:none;cursor:grab;background:#000}
+.crop-wrap{position:relative;overflow:hidden;border-radius:22px;box-shadow:0 6px 18px oklch(.2 .02 105 / .14);touch-action:none;cursor:grab;background:#000;will-change:transform;contain:layout paint}
 .crop-wrap:active{cursor:grabbing}
 .crop-wrap canvas{display:block}
 .crop-x{position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);z-index:5}
