@@ -1732,6 +1732,18 @@ if(_wsSrc){
   _wsSrc.onclick=()=>openStock();
   _wsSrc.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openStock()}};
 }
+
+// Mood buttons on the homepage Pexels card → open modal pre-filtered to that mood
+document.querySelectorAll('.mood-btn').forEach(b=>{
+  b.onclick=()=>{
+    const q=b.dataset.q;
+    // clear last-picked memory so the new mood query takes effect (not the restored one)
+    lastPickedQuery=null;lastPickedPage=null;lastPickedIdx=null;
+    if(stockSearch)stockSearch.value=q;
+    document.querySelectorAll('#stockTags button').forEach(x=>x.classList.toggle('on',x.dataset.q===q));
+    openStock();
+  };
+});
 </script>
 
 </body>
