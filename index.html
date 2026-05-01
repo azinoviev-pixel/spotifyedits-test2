@@ -341,10 +341,12 @@ a{color:inherit;text-decoration:none;cursor:pointer}
 .format-tab small{display:block;margin-top:.15rem;color:var(--graphite-soft);font-size:.76rem;font-weight:720}
 @media(max-width:780px){.format-tabs{grid-template-columns:repeat(2,1fr)}}
 
-.spec-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.72rem}
-.spec-strip .ss{padding:.85rem 1rem;border:1px solid var(--warm-line);border-radius:14px;background:oklch(.986 .006 86);color:var(--graphite-soft);font-size:.86rem;font-weight:760;display:block;text-align:left}
-.spec-strip strong{color:var(--graphite)}
-@media(max-width:780px){.spec-strip{grid-template-columns:repeat(2,1fr)}}
+.spec-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--warm-line);border-radius:18px;background:linear-gradient(180deg,oklch(1 .003 86 / .65),oklch(.986 .006 86));overflow:hidden;box-shadow:inset 0 1px 0 oklch(1 0 0 / .6)}
+.spec-strip .ss{padding:.7rem 1rem;display:flex;flex-direction:column;gap:.18rem;text-align:left;border-right:1px solid var(--warm-line)}
+.spec-strip .ss:last-child{border-right:0}
+.spec-strip .ss-lbl{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.62rem;font-weight:700;color:var(--graphite-faint);letter-spacing:.12em;text-transform:uppercase}
+.spec-strip .ss-val{font-size:.92rem;font-weight:780;color:var(--graphite);letter-spacing:-.005em}
+@media(max-width:780px){.spec-strip{grid-template-columns:repeat(2,1fr)}.spec-strip .ss:nth-child(2){border-right:0}.spec-strip .ss:nth-child(1),.spec-strip .ss:nth-child(2){border-bottom:1px solid var(--warm-line)}}
 .fmt-rule{font-size:.95rem;color:var(--graphite-soft);margin:1rem 0;line-height:1.55;font-weight:560;text-wrap:pretty}
 
 .workspace-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(360px,1.05fr);gap:1rem;margin-top:1rem}
@@ -1011,28 +1013,32 @@ let curFmt='canvas';
 
 const FMTS={
   canvas:{r:9/16,sizes:[[720,1280],[1080,1920]],labels:['720×1280','1080×1920'],mp4:true,accept:'image/*,video/*,.mp4,.mov,.webm',
-    specs:['9:16 ratio','1080 × 1920','JPEG or MP4','3-8 seconds'],
+    specs:['9:16','1080 × 1920','JPEG · MP4','3 – 8 s'],
+    specsLbl:['Ratio','Pixels','Formats','Length'],
     rule:'A 3–8 second vertical loop that replaces cover art in the Now Playing view on the Spotify mobile app.',
     dropHint:'Photo or video — any size, we crop & encode',
     dropExt:'JPG · PNG · WEBP · MP4 · MOV · WEBM',
     stockLabel:'Browse free stock videos',
     stockKind:'video',stockOrient:'portrait'},
   header:{r:2660/1140,sizes:[[2660,1140],[3990,1710]],labels:['2660×1140','3990×1710'],mp4:false,accept:'image/*',
-    specs:['2660 × 1140 min','Landscape','JPEG or PNG','< 20 MB'],
+    specs:['2660 × 1140','Landscape','JPEG · PNG','< 20 MB'],
+    specsLbl:['Min size','Orient','Formats','Max file'],
     rule:'The horizontal banner at the top of your artist page. Artist name + avatar overlay the lower-left — keep it clean.',
     dropHint:'Drop a landscape photo — we crop to 2660×1140',
     dropExt:'JPG · PNG · WEBP',
     stockLabel:'Browse free stock photos',
     stockKind:'photo',stockOrient:'landscape'},
   avatar:{r:1,sizes:[[750,750],[1500,1500]],labels:['750×750','1500×1500'],mp4:false,accept:'image/*',
-    specs:['Square 1:1','750px minimum','JPEG or PNG','Crops to circle'],
+    specs:['1 : 1','750 × 750','JPEG · PNG','Round crop'],
+    specsLbl:['Shape','Min size','Formats','Display'],
     rule:'Round profile picture. Spotify crops to a circle — keep your subject centered.',
     dropHint:'Drop a photo — we crop to a 1:1 square',
     dropExt:'JPG · PNG · WEBP',
     stockLabel:'Browse free stock photos',
     stockKind:'photo',stockOrient:'square'},
   cover:{r:1,sizes:[[1600,1600],[3000,3000]],labels:['1600×1600','3000×3000'],mp4:false,accept:'image/*',
-    specs:['Square 1:1','3000px ideal','JPEG or PNG','sRGB color'],
+    specs:['1 : 1','3000 × 3000','JPEG · PNG','sRGB'],
+    specsLbl:['Shape','Ideal','Formats','Color space'],
     rule:'Album / single artwork. Distributors enforce 3000×3000 sRGB JPEG, under 10 MB.',
     dropHint:'Drop a photo — we crop to a 1:1 square',
     dropExt:'JPG · PNG · WEBP',
@@ -1059,7 +1065,9 @@ function setFmt(f){
   fi.accept=d.accept;
   document.querySelectorAll('.fmt').forEach(b=>b.classList.toggle('on',b.dataset.fmt===f));
   // Update specs
-  const strip=$('#specsStrip');strip.innerHTML=d.specs.map(s=>`<span class="ss">${s}</span>`).join('');
+  const strip=$('#specsStrip');
+  const lbls=d.specsLbl||['','','',''];
+  strip.innerHTML=d.specs.map((v,i)=>`<span class="ss"><em class="ss-lbl">${lbls[i]||''}</em><strong class="ss-val">${v}</strong></span>`).join('');
   // Update rule line
   const rl=$('#fmtRule');if(rl)rl.textContent=d.rule||'';
   // Update drop zone text
