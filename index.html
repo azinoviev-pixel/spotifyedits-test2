@@ -696,6 +696,14 @@ a{color:inherit;text-decoration:none;cursor:pointer}
           <input id="zm" type="range" min="50" max="300" step="1" value="100">
         </div>
 
+        <div id="qCtl" class="cr">
+          <span class="cl">Quality</span>
+          <div class="size-row">
+            <button class="sb qb on" type="button" data-bpp="0.20">Standard · ~12 Mbps</button>
+            <button class="sb qb" type="button" data-bpp="0.30">High · ~18 Mbps</button>
+          </div>
+        </div>
+
         <div class="btn-row">
           <button id="exp" class="btn btn-green" type="button">↓ Export MP4</button>
           <button id="ej" class="btn btn-green hidden" type="button">↓ Save JPEG</button>
@@ -940,6 +948,7 @@ let mode=null,img=null;
 let zoom=1,panX=0,panY=0,drag=false,lastX,lastY;
 let cropX,cropY,cropW,cropH;
 let outW=1080,outH=1920;
+let bppCoef=0.20;
 let vidDur=0,vidAnim=null;
 // Trim-change handler: keep both videos in sync; dual-video RAF picks up rest
 function resyncVids(){
@@ -987,8 +996,9 @@ function updQualityNote(){
   const el=$('#qualityNote');if(!el)return;
   const d=FMTS[curFmt];
   if(d.mp4){
-    const fps=30;const mbps=Math.round(outW*outH*fps*0.20/1e6*10)/10;
-    el.textContent=`High quality · H.264 · ~${mbps} Mbps · ${fps} fps`;
+    const fps=30;const mbps=Math.round(outW*outH*fps*bppCoef/1e6*10)/10;
+    const tier=bppCoef>=0.28?'High':'Standard';
+    el.textContent=`${tier} · H.264 · ~${mbps} Mbps · ${fps} fps · ${bppCoef.toFixed(2)} bpp`;
     el.style.display='';
   } else {
     el.textContent='High quality · JPEG 98% · sRGB';
@@ -1020,16 +1030,18 @@ function setFmt(f){
   sr.innerHTML=d.sizes.map((s,i)=>`<button class="sb${i===1?' on':''}" data-w="${s[0]}" data-h="${s[1]}">${d.labels[i]}</button>`).join('');
   sr.querySelectorAll('.sb').forEach(b=>{b.onclick=()=>{sr.querySelectorAll('.sb').forEach(x=>x.classList.remove('on'));b.classList.add('on');outW=+b.dataset.w;outH=+b.dataset.h;updQualityNote()}});
   updQualityNote();
-  // Show/hide MP4 button + video-only controls (loop, slow-mo)
-  const fadeCtl=$('#fadeCtl'),sloCtl=$('#sloCtl');
+  // Show/hide MP4 button + video-only controls (loop, slow-mo, quality)
+  const fadeCtl=$('#fadeCtl'),sloCtl=$('#sloCtl'),qCtl=$('#qCtl');
   if(!d.mp4){
     $('#exp').classList.add('hidden');$('#ej').classList.remove('hidden');
     if(fadeCtl)fadeCtl.style.display='none';
     if(sloCtl)sloCtl.style.display='none';
+    if(qCtl)qCtl.style.display='none';
   } else {
     $('#exp').classList.remove('hidden');
     if(fadeCtl)fadeCtl.style.display='';
     if(sloCtl)sloCtl.style.display='';
+    if(qCtl)qCtl.style.display='';
   }
   // Stock browser shown for ALL formats (videos for Canvas, photos for image formats)
   const sb=$('#stockBtn'),so=$('#stockOr');
@@ -1299,7 +1311,7 @@ $('#exp').onclick=async()=>{
     const encoder=new VideoEncoder({output:(chunk,meta)=>muxer.addVideoChunk(chunk,meta),error:e=>{throw e}});
     // Bitrate scales with output resolution. Targets ~0.2 bits-per-pixel-per-second for "high quality" H.264.
     // 1080×1920@30 → ~12 Mbps. 720×1280@30 → ~5.5 Mbps. Cover Art video would scale up too.
-    const targetBitrate=Math.round(outW*outH*fps*0.20);
+    const targetBitrate=Math.round(outW*outH*fps*bppCoef);
     let ok=false;
     for(const codec of['avc1.640028','avc1.4d0028','avc1.42001f']){
       try{const s=await VideoEncoder.isConfigSupported({codec,width:outW,height:outH,bitrate:targetBitrate,framerate:fps});
@@ -1742,6 +1754,16 @@ document.querySelectorAll('.mood-btn').forEach(b=>{
     if(stockSearch)stockSearch.value=q;
     document.querySelectorAll('#stockTags button').forEach(x=>x.classList.toggle('on',x.dataset.q===q));
     openStock();
+  };
+});
+
+// Quality (bpp) toggle — actually changes the encoder bitrate target
+document.querySelectorAll('.qb').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.qb').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    bppCoef=parseFloat(b.dataset.bpp)||0.20;
+    updQualityNote();
   };
 });
 </script>
