@@ -1154,7 +1154,9 @@ function updPreviewPanel(f){
 document.querySelectorAll('.fmt').forEach(b=>{b.onclick=()=>setFmt(b.dataset.fmt)});
 
 // FILE INPUT
-drop.onclick=()=>fi.click();
+// #drop is a <label for="fi"> — clicking the label natively opens the file picker.
+// Do NOT call fi.click() here; the synthetic second click cancels the native dialog
+// in Safari/Chromium and the picker briefly opens then closes (no file selected).
 drop.ondragover=e=>{e.preventDefault();drop.classList.add('over')};
 drop.ondragleave=()=>drop.classList.remove('over');
 drop.ondrop=e=>{e.preventDefault();drop.classList.remove('over');handle(e.dataTransfer.files[0])};
