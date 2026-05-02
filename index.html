@@ -5,12 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Primary SEO — primary keyword: "spotify canvas" (1.5K/mo, KD 12) + cluster -->
-<title>Free Canvas Maker for Spotify Artists — No Signup, No Watermark</title>
+<title>Free Canvas Maker for Spotify Artists — No Watermark</title>
 <meta name="description" content="Free browser tool for Spotify artists: 9:16 Canvas MP4, Header, Avatar, Cover Art. No signup, no watermark, files stay on your device.">
 <meta name="keywords" content="spotify canvas, spotify canvas maker, spotify canvas generator, spotify canvas creator, spotify canvas dimensions, spotify canvas size, spotify canvas length, spotify canvas specs, spotify canvas template, free spotify canvas maker, spotify canvas video maker, how to make spotify canvas, spotify header maker, spotify profile picture size, spotify cover art maker, spotify banner maker, spotify for artists canvas, distrokid spotify canvas">
 <meta name="author" content="Anton Zinoviev">
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#1DB954">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="canonical" href="https://test2.spotifyedits.com/">
 <link rel="alternate" hreflang="en" href="https://test2.spotifyedits.com/">
 <link rel="alternate" hreflang="x-default" href="https://test2.spotifyedits.com/">
@@ -20,7 +22,7 @@
 <meta property="og:description" content="Free browser tool for Spotify artists: 9:16 Canvas MP4, Header, Avatar, Cover Art. No signup, no watermark, files stay on your device.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://test2.spotifyedits.com/">
-<meta property="og:site_name" content="test2.spotifyedits.com">
+<meta property="og:site_name" content="spotifyedits.com">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://test2.spotifyedits.com/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -42,11 +44,19 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "test2.spotifyedits.com",
+  "name": "spotifyedits.com",
   "alternateName": "Canvas Maker for Spotify Artists",
   "url": "https://test2.spotifyedits.com/",
   "description": "Free Spotify Canvas maker, plus Header, Avatar and Cover Art tools. Browser-only, no signup, no watermark.",
-  "inLanguage": "en"
+  "inLanguage": "en",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://test2.spotifyedits.com/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
 }
 </script>
 
@@ -296,13 +306,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-:root{--radius:.9rem;--warm:oklch(.982 .009 86);--warm-panel:oklch(.997 .004 86);--warm-soft:oklch(.956 .014 86);--warm-line:oklch(.855 .012 86);--graphite:oklch(.205 .018 105);--graphite-soft:oklch(.49 .018 105);--graphite-faint:oklch(.62 .016 105);--green:oklch(.64 .18 145);--green-deep:oklch(.36 .12 145);--green-soft:oklch(.91 .048 145);--green-line:oklch(.75 .12 145);--shadow-soft:0 24px 70px oklch(.28 .024 86 / .10);--shadow-small:0 12px 34px oklch(.28 .024 86 / .08);--red:#D94040}
+:root{--radius:.9rem;--warm:oklch(.982 .009 86);--warm-panel:oklch(.997 .004 86);--warm-soft:oklch(.956 .014 86);--warm-line:oklch(.855 .012 86);--graphite:oklch(.205 .018 105);--graphite-soft:oklch(.49 .018 105);--graphite-faint:oklch(.55 .018 105);--green:oklch(.64 .18 145);--green-deep:oklch(.36 .12 145);--green-soft:oklch(.91 .048 145);--green-line:oklch(.75 .12 145);--shadow-soft:0 24px 70px oklch(.28 .024 86 / .10);--shadow-small:0 12px 34px oklch(.28 .024 86 / .08);--red:#D94040}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{min-height:100vh;font-family:'Manrope',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-feature-settings:"ss01","ss02";color:var(--graphite);background:linear-gradient(180deg,oklch(1 .003 86 / .9),transparent 28rem),radial-gradient(circle at 84% 10%,oklch(.91 .048 145 / .34),transparent 26rem),radial-gradient(circle at 8% 36%,oklch(.94 .075 78 / .24),transparent 24rem),var(--warm)}
 button{font:inherit;border:0;background:transparent;color:inherit;cursor:pointer}
 a{color:inherit;text-decoration:none;cursor:pointer}
 .hidden{display:none!important}
+:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:6px}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--green);outline-offset:2px}
 
 .site-shell{max-width:1180px;margin:0 auto;padding:0 clamp(16px,3vw,32px)}
 
@@ -463,7 +475,7 @@ a{color:inherit;text-decoration:none;cursor:pointer}
 .crop-wrap{position:relative;overflow:hidden;border-radius:22px;box-shadow:0 6px 18px oklch(.2 .02 105 / .14);touch-action:none;cursor:grab;background:#000;will-change:transform;contain:layout paint}
 .crop-wrap:active{cursor:grabbing}
 .crop-wrap canvas{display:block}
-.crop-x{position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);z-index:5}
+.crop-x{position:absolute;top:8px;right:8px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:22px;line-height:1;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);z-index:5}
 .crop-x:hover{background:rgba(217,64,64,.85)}
 .crop-hint{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);padding:6px 12px;background:rgba(0,0,0,.7);color:#fff;font-family:ui-monospace,monospace;font-size:10px;border-radius:14px;z-index:4;pointer-events:none}
 
@@ -471,7 +483,7 @@ a{color:inherit;text-decoration:none;cursor:pointer}
 .ws-source{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--graphite-soft);background:var(--warm-panel);border:1px solid var(--warm-line);padding:3px 4px 3px 10px;border-radius:16px;cursor:pointer;align-self:start}
 .ws-source:hover{border-color:var(--green-line);background:var(--green-soft);color:var(--green-deep)}
 .ws-source-arrow{font-size:11px}
-.ws-source-x{width:18px;height:18px;border:0;background:var(--warm-soft);color:var(--graphite-soft);border-radius:50%;font-size:14px;line-height:1;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.ws-source-x{width:28px;height:28px;border:0;background:var(--warm-soft);color:var(--graphite-soft);border-radius:50%;font-size:16px;line-height:1;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex:0 0 28px}
 
 .cr{display:flex;align-items:center;gap:10px;padding:4px 0;flex-wrap:wrap}
 .cl{font-family:ui-monospace,monospace;font-size:10px;font-weight:700;color:var(--graphite-soft);text-transform:uppercase;letter-spacing:.08em;min-width:64px;flex:0 0 64px}
@@ -509,9 +521,9 @@ a{color:inherit;text-decoration:none;cursor:pointer}
 .stock-inner{position:relative;width:100%;max-width:920px;max-height:90vh;background:var(--warm);border:1px solid var(--warm-line);border-radius:24px;box-shadow:var(--shadow-soft);display:flex;flex-direction:column;overflow:hidden}
 .stock-head{display:flex;gap:8px;padding:16px 20px;border-bottom:1px solid var(--warm-line);background:var(--warm-panel)}
 .stock-head input{flex:1;background:var(--warm-soft);border:1px solid var(--warm-line);color:var(--graphite);padding:10px 14px;border-radius:10px;font-family:'Manrope',sans-serif;font-size:14px;outline:none}
-.stock-close{width:38px;height:38px;background:var(--warm-soft);border:1px solid var(--warm-line);border-radius:10px;font-size:22px;color:var(--graphite-soft);line-height:1}
+.stock-close{width:44px;height:44px;background:var(--warm-soft);border:1px solid var(--warm-line);border-radius:10px;font-size:22px;color:var(--graphite-soft);line-height:1;flex:0 0 44px}
 .stock-tags{display:flex;gap:6px;padding:12px 20px;flex-wrap:wrap;border-bottom:1px solid var(--warm-line);background:var(--warm-panel)}
-.stock-tags button{padding:6px 12px;background:var(--warm-soft);border:1px solid var(--warm-line);border-radius:16px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:var(--graphite-soft)}
+.stock-tags button{padding:10px 14px;background:var(--warm-soft);border:1px solid var(--warm-line);border-radius:16px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:var(--graphite-soft);min-height:40px}
 .stock-tags button.on{background:var(--green-soft);border-color:var(--green-line);color:var(--green-deep)}
 .stock-grid{flex:1;overflow-y:auto;padding:16px 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;background:var(--warm)}
 .stock-card{position:relative;aspect-ratio:9/16;border-radius:14px;overflow:hidden;cursor:pointer;background:var(--warm-soft);border:1px solid var(--warm-line)}
@@ -697,7 +709,7 @@ a{color:inherit;text-decoration:none;cursor:pointer}
           </div>
           <div class="cr">
             <span class="cl">Duration</span>
-            <input id="dur" type="range" min="3" max="8" step="0.5" value="6">
+            <input id="dur" type="range" min="3" max="8" step="0.5" value="6" aria-label="Duration in seconds">
             <span class="tv" id="durD">6s</span>
           </div>
         </div>
@@ -705,12 +717,12 @@ a{color:inherit;text-decoration:none;cursor:pointer}
         <div id="vidCtl" class="hidden">
           <div class="cr">
             <span class="cl">Trim start</span>
-            <input id="ts" type="range" min="0" max="10" step="0.1" value="0">
+            <input id="ts" type="range" min="0" max="10" step="0.1" value="0" aria-label="Trim start time in seconds">
             <span class="tv" id="tsD">0:00</span>
           </div>
           <div class="cr">
             <span class="cl">Trim end</span>
-            <input id="te" type="range" min="0" max="10" step="0.1" value="6">
+            <input id="te" type="range" min="0" max="10" step="0.1" value="6" aria-label="Trim end time in seconds">
             <span class="tv" id="teD">0:06</span>
           </div>
           <div class="cr">
@@ -722,8 +734,8 @@ a{color:inherit;text-decoration:none;cursor:pointer}
         <div id="fadeCtl">
           <div class="cr">
             <span class="cl">Loop fade</span>
-            <input type="checkbox" id="cf" checked>
-            <input id="cfDur" type="number" min="0.1" max="2" step="0.1" value="0.5" style="width:64px">
+            <input type="checkbox" id="cf" checked aria-label="Enable seamless loop fade">
+            <input id="cfDur" type="number" min="0.1" max="2" step="0.1" value="0.5" style="width:64px" aria-label="Loop fade duration in seconds">
             <span class="tv">sec</span>
           </div>
           <div class="cf-note">Crossfades end into start so the loop is seamless on Spotify.</div>
@@ -732,14 +744,14 @@ a{color:inherit;text-decoration:none;cursor:pointer}
         <div id="sloCtl">
           <div class="cr">
             <span class="cl">Slow-mo</span>
-            <input type="checkbox" id="slo">
+            <input type="checkbox" id="slo" aria-label="Slow motion preview at 0.5x speed">
             <span class="tv" style="text-align:left">0.5× preview blur</span>
           </div>
         </div>
 
         <div class="cr">
           <span class="cl">Zoom</span>
-          <input id="zm" type="range" min="50" max="300" step="1" value="100">
+          <input id="zm" type="range" min="50" max="300" step="1" value="100" aria-label="Zoom level percentage">
         </div>
 
         <div id="qCtl" class="cr">
@@ -753,8 +765,8 @@ a{color:inherit;text-decoration:none;cursor:pointer}
         <div class="btn-row">
           <button id="exp" class="btn btn-green" type="button">↓ Export MP4</button>
           <button id="ej" class="btn btn-green hidden" type="button">↓ Save JPEG</button>
-          <button id="rep" class="btn btn-ghost" type="button" title="Replace file">⇆</button>
-          <button id="rst" class="btn btn-ghost" type="button" title="Start over">↺</button>
+          <button id="rep" class="btn btn-ghost" type="button" title="Replace file" aria-label="Replace file">⇆</button>
+          <button id="rst" class="btn btn-ghost" type="button" title="Start over" aria-label="Start over">↺</button>
         </div>
         <div class="progress" id="prog"><div id="pf" style="width:0"></div></div>
         <div class="status" id="nfo"></div>
@@ -939,7 +951,7 @@ a{color:inherit;text-decoration:none;cursor:pointer}
   <div id="stockOverlay" class="stock-overlay"></div>
   <div class="stock-inner">
     <div class="stock-head">
-      <input id="stockSearch" type="text" placeholder="Search Pexels…" autocomplete="off">
+      <input id="stockSearch" type="text" placeholder="Search Pexels…" autocomplete="off" aria-label="Search Pexels stock library">
       <button id="stockClose" class="stock-close" type="button" aria-label="Close">×</button>
     </div>
     <div id="stockTags" class="stock-tags">
@@ -987,8 +999,8 @@ a{color:inherit;text-decoration:none;cursor:pointer}
 </div>
 
 <!-- Hidden videos used by dual-video preview architecture -->
-<video id="srcVid" hidden muted playsinline crossorigin="anonymous"></video>
-<video id="srcVid2" hidden muted playsinline crossorigin="anonymous"></video>
+<video id="srcVid" hidden muted playsinline crossorigin="anonymous" aria-hidden="true"></video>
+<video id="srcVid2" hidden muted playsinline crossorigin="anonymous" aria-hidden="true"></video>
 
 <script type="module">
 const $=s=>document.querySelector(s);
