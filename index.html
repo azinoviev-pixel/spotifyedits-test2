@@ -335,7 +335,7 @@ a{color:inherit;text-decoration:none;cursor:pointer}
 .format-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.72rem;margin-bottom:.8rem}
 .format-tab{display:flex;align-items:center;gap:.72rem;padding:.9rem;border:1px solid var(--warm-line);border-radius:19px;background:var(--warm-panel);color:var(--graphite);text-align:left;transition:transform .18s,border-color .18s,background .18s}
 .format-tab:hover{transform:translateY(-2px);border-color:var(--green-line)}
-.format-tab.is-active,.format-tab.on{border-color:var(--green-line);background:linear-gradient(135deg,var(--green-soft),oklch(1 .003 86));box-shadow:inset 0 0 0 1px oklch(1 0 0 / .55),var(--shadow-small)}
+.format-tab.on{border-color:var(--green-line);background:linear-gradient(135deg,var(--green-soft),oklch(1 .003 86));box-shadow:inset 0 0 0 1px oklch(1 0 0 / .55),var(--shadow-small)}
 .format-icon{width:34px;height:34px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--warm-line);background:var(--warm-panel);color:var(--green-deep);flex:0 0 auto}
 .format-tab strong{display:block;font-size:.95rem;font-weight:860}
 .format-tab small{display:block;margin-top:.15rem;color:var(--graphite-soft);font-size:.76rem;font-weight:720}
@@ -628,7 +628,7 @@ a{color:inherit;text-decoration:none;cursor:pointer}
   </div>
 
   <div class="format-tabs" role="tablist" aria-label="Format">
-    <button class="format-tab fmt is-active on" data-fmt="canvas" role="tab">
+    <button class="format-tab fmt on" data-fmt="canvas" role="tab">
       <span class="format-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="3" width="10" height="18" rx="2"/></svg></span>
       <span><strong>Canvas</strong><small>9:16 MP4 · 3–8s</small></span>
     </button>
