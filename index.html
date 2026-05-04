@@ -364,9 +364,11 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .workspace-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(360px,1.05fr);gap:1rem;margin-top:1rem}
 @media(max-width:980px){.workspace-grid{grid-template-columns:1fr}}
 
-.input-panel,.preview-panel{border:1px solid var(--warm-line);background:var(--warm-panel);box-shadow:var(--shadow-small);border-radius:28px;padding:clamp(1rem,2vw,1.2rem)}
+.input-panel,.preview-panel{border:1px solid var(--warm-line);background:var(--warm-panel);box-shadow:var(--shadow-small);border-radius:28px;padding:clamp(1rem,2vw,1.2rem);min-height:540px}
 .input-panel{display:flex;flex-direction:column;gap:.9rem}
-.input-panel .panel-label{display:inline-flex;align-items:center;gap:.4rem;color:var(--green-deep);font-size:.7rem;font-weight:820;letter-spacing:.08em;text-transform:uppercase}
+.preview-panel{display:flex;flex-direction:column}
+@media(max-width:980px){.input-panel,.preview-panel{min-height:auto}}
+.input-panel .panel-label{display:inline-flex;align-items:center;gap:.4rem;margin:0 0 .35rem;color:var(--green-deep);font-size:.76rem;font-weight:820;letter-spacing:.08em;text-transform:uppercase}
 
 .dropzone{display:grid;place-items:center;text-align:center;min-height:214px;padding:1.2rem;border:1.5px dashed var(--green-line);border-radius:26px;background:linear-gradient(135deg,oklch(.91 .048 145 / .34),transparent),var(--warm-panel);transition:transform .18s,border-color .18s,background .18s;cursor:pointer}
 .dropzone:hover,.dropzone.over{transform:translateY(-2px);border-color:var(--green-deep);background:linear-gradient(135deg,oklch(.91 .048 145 / .54),transparent),var(--warm-panel)}
@@ -374,9 +376,22 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .dropzone strong{margin-top:.8rem;color:var(--graphite);font-weight:860;font-size:1rem;display:block}
 .dropzone small{color:var(--graphite-soft);font-size:.78rem;font-weight:720;display:block}
 
-.source-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:.85rem}
-.secondary-action{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:1px solid var(--green-line);background:var(--green-soft);color:var(--green-deep);padding:.82rem 1rem;border-radius:999px;font-weight:820;font-size:.85rem;transition:transform .18s}
+.source-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:.6rem;align-items:center}
+.source-actions #stockOr{color:var(--graphite-faint);font-size:.78rem;font-weight:720}
+.secondary-action{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:1px solid var(--green-line);background:var(--green-soft);color:var(--green-deep);padding:.82rem 1.1rem;border-radius:999px;font-weight:820;font-size:.85rem;transition:transform .18s,border-color .18s}
 .secondary-action:hover{transform:translateY(-2px)}
+
+.surprise-btn{position:relative;display:flex;align-items:center;justify-content:center;gap:.55rem;width:100%;margin-top:.65rem;padding:.92rem 1.1rem;border:1px solid oklch(.78 .12 152 / .55);border-radius:18px;background:linear-gradient(135deg,oklch(.96 .06 152 / .85) 0%,oklch(.97 .04 86 / .8) 50%,oklch(.95 .055 152 / .85) 100%);color:var(--graphite);font-weight:820;font-size:.92rem;letter-spacing:-.005em;cursor:pointer;overflow:hidden;transition:transform .22s cubic-bezier(.34,1.56,.64,1),box-shadow .22s,border-color .22s}
+.surprise-btn:hover{transform:translateY(-2px);border-color:var(--green);box-shadow:0 12px 30px oklch(.78 .14 152 / .25)}
+.surprise-btn:active{transform:translateY(0)}
+.surprise-btn:disabled{opacity:.55;cursor:wait}
+.surprise-glow{position:absolute;inset:-50%;background:radial-gradient(circle at 30% 50%,oklch(.85 .15 152 / .35) 0%,transparent 55%);opacity:.6;pointer-events:none;animation:surpriseSwirl 7s linear infinite}
+.surprise-icon{position:relative;color:var(--green-deep);filter:drop-shadow(0 0 6px oklch(.85 .15 152 / .55))}
+.surprise-btn:hover .surprise-icon{animation:surpriseSpin .65s ease}
+.surprise-hint{position:relative;color:var(--graphite-soft);font-size:.74rem;font-weight:720;letter-spacing:.02em;margin-left:.35rem;opacity:.85}
+@keyframes surpriseSwirl{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+@keyframes surpriseSpin{0%{transform:rotate(0deg) scale(1)}50%{transform:rotate(180deg) scale(1.18)}100%{transform:rotate(360deg) scale(1)}}
+@media(prefers-reduced-motion:reduce){.surprise-glow,.surprise-btn:hover .surprise-icon{animation:none}}
 
 .panel-topline{display:flex;justify-content:space-between;align-items:start;gap:1rem}
 .preview-panel .panel-label{display:inline-flex;align-items:center;gap:.4rem;margin:0 0 .35rem;color:var(--green-deep);font-size:.76rem;font-weight:820;letter-spacing:.08em;text-transform:uppercase}
@@ -394,14 +409,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .preview-content span{font-size:.74rem;font-weight:780;opacity:.74;text-transform:uppercase;letter-spacing:.12em}
 .preview-content strong{font-size:1.45rem;font-weight:880;letter-spacing:-.055em}
 .phone-bar{position:absolute;top:12px;z-index:3;width:46px;height:5px;border-radius:999px;background:oklch(1 0 0 / .46)}
-
-.export-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem;margin-top:1rem}
-.export-summary div{padding:.75rem;border:1px solid var(--warm-line);border-radius:16px;background:var(--warm-soft)}
-.export-summary span{display:block;color:var(--graphite-soft);font-size:.7rem;font-weight:780;text-transform:uppercase;letter-spacing:.08em}
-.export-summary strong{display:block;margin-top:.2rem;color:var(--graphite);font-size:.82rem;font-weight:850}
-
-.checklist{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
-.checklist span{display:inline-flex;align-items:center;gap:.45rem;padding:.54rem .65rem;border:1px solid var(--warm-line);border-radius:999px;background:var(--warm-soft);color:var(--graphite);font-size:.82rem;font-weight:760}
 
 .section{padding:clamp(68px,8vw,108px) 0 0}
 .section-heading{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.2rem}
@@ -421,13 +428,17 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .pexels-flow{display:flex;flex-wrap:wrap;align-items:center;gap:.55rem;padding:.85rem;border:1px solid var(--warm-line);border-radius:18px;background:oklch(.986 .006 86);color:var(--graphite-soft);font-size:.85rem;font-weight:800}
 @media(max-width:640px){.mood-grid{grid-template-columns:repeat(2,1fr)}}
 
-.player-card{display:grid;gap:1rem;background:radial-gradient(circle at 8% 12%,oklch(.91 .048 145 / .38),transparent 32%),var(--warm-panel)}
+.player-card{display:flex;flex-direction:column;background:radial-gradient(circle at 8% 12%,oklch(.91 .048 145 / .38),transparent 32%),var(--warm-panel)}
+.player-card>*{flex:1;min-height:152px}
 .player-head{display:flex;align-items:center;gap:.85rem}
 .player-cover{width:54px;height:54px;border-radius:18px;background:var(--graphite);color:#fff;display:grid;place-items:center;font-size:18px}
 .player-head strong{display:block;color:var(--graphite);font-weight:880;letter-spacing:-.025em}
 .player-head small{display:block;margin-top:.15rem;color:var(--graphite-soft);font-size:.82rem;font-weight:720}
-.player-card iframe,.player-card .creator-embed-ph{overflow:hidden;border:0;border-radius:18px;background:var(--graphite);color:#fff;width:100%;height:152px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:800;cursor:pointer}
+.player-card iframe,.player-card .creator-embed-ph{overflow:hidden;border:0;border-radius:18px;background:var(--graphite);color:#fff;width:100%;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:800;cursor:pointer}
+.player-card iframe{display:block;height:152px}
+.player-card .creator-embed-ph{min-height:152px;flex:1}
 .player-card .creator-embed-ph svg{color:var(--green)}
+.player-card .creator-embed-ph:hover,.player-card .creator-embed-ph:focus-visible{background:oklch(.18 .018 105)}
 
 .specs-table{overflow:hidden;border-radius:24px;border:1px solid var(--warm-line);background:var(--warm-panel);box-shadow:var(--shadow-small)}
 .spec-row{display:grid;grid-template-columns:180px minmax(0,1fr);gap:1rem;padding:1rem 1.1rem;border-bottom:1px solid var(--warm-line);background:oklch(1 .003 86 / .72)}
@@ -463,13 +474,14 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 
 /* ===== OUR EDITOR ELEMENTS WIRED INTO MANUS SHELL ===== */
 #ws{display:none}
-#ws.on{display:block}
+#ws.on{display:flex;flex-direction:column;justify-content:center;flex:1;min-height:430px}
+@media(max-width:980px){#ws.on{min-height:auto}}
 .workspace-grid .ws-ctl{display:none;flex-direction:column;gap:.65rem}
 .workspace-grid:has(#ws.on) .ws-ctl{display:flex}
-.workspace-grid:has(#ws.on) .device-stage,
-.workspace-grid:has(#ws.on) .export-summary,
-.workspace-grid:has(#ws.on) .checklist{display:none}
+.workspace-grid:has(#ws.on) .device-stage{display:none}
 .workspace-grid:has(#ws.on) #dropArea{display:none}
+.workspace-grid:has(#ws.on) .source-actions,
+.workspace-grid:has(#ws.on) .surprise-btn{display:none}
 
 .crop-container{display:flex;justify-content:center;margin:0 0 .8rem 0}
 .crop-wrap{position:relative;overflow:hidden;border-radius:22px;box-shadow:0 6px 18px oklch(.2 .02 105 / .14);touch-action:none;cursor:grab;background:#000;will-change:transform;contain:layout paint}
@@ -569,7 +581,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
   .intro-section{padding:30px 0 18px;gap:1.2rem}
   .panel-topline{flex-direction:column;align-items:flex-start;gap:.5rem}
   .panel-topline h2{font-size:1.15rem}
-  .export-summary{grid-template-columns:repeat(2,1fr)}
   .workspace-head h2{font-size:1.85rem}
   .format-tab{padding:.75rem;gap:.55rem}
   .format-tab strong{font-size:.88rem}
@@ -581,7 +592,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
   .preview-frame--header{width:min(310px,92%)}
   .preview-frame--avatar{width:220px;height:220px}
   .preview-frame--cover{width:240px;height:240px}
-  .player-card iframe,.player-card .creator-embed-ph{height:128px}
+  .player-card iframe{height:128px}
+  .player-card .creator-embed-ph{min-height:128px}
   .pexels-flow{font-size:.78rem;gap:.4rem}
   .section-heading h2{font-size:clamp(1.7rem,7vw,2.4rem)}
   .privacy-section h2{font-size:clamp(1.7rem,7vw,2.4rem)}
@@ -664,7 +676,12 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
   <div class="workspace-grid">
 
     <div class="input-panel">
-      <span class="panel-label"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg> Source</span>
+      <div class="panel-topline">
+        <div>
+          <span class="panel-label"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg> Source</span>
+          <h2>What you'll start with</h2>
+        </div>
+      </div>
 
       <div id="dropArea">
         <label for="fi" id="drop" class="dropzone" tabindex="0" aria-label="Upload file">
@@ -679,9 +696,16 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
             <svg id="stockIconPhoto" class="hidden" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
             <span id="stockBtnLabel">Browse free stock videos</span>
           </button>
-          <span id="stockOr" style="color:var(--graphite-faint);font-size:.78rem;font-weight:720;align-self:center">or upload from device</span>
+          <span id="stockOr">or upload from device</span>
         </div>
+        <button id="useExample" class="surprise-btn" type="button" aria-label="Load a random Pexels preview">
+          <span class="surprise-glow"></span>
+          <svg class="surprise-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2l1.6 4.8L18.4 8l-4.8 1.6L12 14l-1.6-4.8L5.6 8l4.8-1.2zM19 14l1.1 2.6L22.7 18l-2.6 1.1L19 21l-1.1-2.6L15.3 18l2.6-1.1z"/></svg>
+          <span id="useExampleLabel">Surprise me</span>
+          <span class="surprise-hint">random Pexels pick</span>
+        </button>
       </div>
+
 
       <div class="ws-ctl">
         <div id="wsSource" class="ws-source hidden" tabindex="0" role="button" aria-label="Reopen Pexels picker">
@@ -802,18 +826,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
         </div>
       </div>
 
-      <div class="export-summary">
-        <div><span>Format</span><strong id="esFmt">Canvas MP4</strong></div>
-        <div><span>Aspect</span><strong id="esAspect">9 : 16</strong></div>
-        <div><span>Length</span><strong id="esLen">3 – 8 s</strong></div>
-        <div><span>Codec</span><strong id="esCodec">H.264</strong></div>
-      </div>
-
-      <div id="checklist" class="checklist">
-        <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Local encode</span>
-        <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Seamless loop</span>
-        <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> sRGB · clean edges</span>
-      </div>
     </div>
 
   </div>
@@ -859,12 +871,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
     <p>I'm Anton — independent artist. I built this because the existing Canvas tools were either paywalled, watermarked, or just bad. Listen to my latest release while you work — it's why this tool exists in the first place.</p>
   </div>
   <div class="player-card">
-    <div class="player-head">
-      <span class="player-cover">▶</span>
-      <span><strong>Anton Zinoviev</strong><small>Independent · electronic</small></span>
-    </div>
-    <div id="creatorEmbedPh" class="creator-embed-ph">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="0"/><polygon points="10,8 16,12 10,16" fill="white"/></svg>
+    <div id="creatorEmbedPh" class="creator-embed-ph" tabindex="0" role="button" aria-label="Load Spotify player for Anton Zinoviev">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="0"/><polygon points="10,8 16,12 10,16" fill="white"/></svg>
       <span>Load Spotify player</span>
     </div>
   </div>
@@ -1031,7 +1039,8 @@ const FMTS={
     dropHint:'Photo or video — any size, we crop & encode',
     dropExt:'JPG · PNG · WEBP · MP4 · MOV · WEBM',
     stockLabel:'Browse free stock videos',
-    stockKind:'video',stockOrient:'portrait'},
+    stockKind:'video',stockOrient:'portrait',
+    examplePool:['aesthetic','smoke','neon','city night','ocean','space']},
   header:{r:2660/1140,sizes:[[2660,1140],[3990,1710]],labels:['2660×1140','3990×1710'],mp4:false,accept:'image/*',
     specs:['2660 × 1140','Landscape','JPEG · PNG','< 20 MB'],
     specsLbl:['Min size','Orient','Formats','Max file'],
@@ -1039,7 +1048,8 @@ const FMTS={
     dropHint:'Drop a landscape photo — we crop to 2660×1140',
     dropExt:'JPG · PNG · WEBP',
     stockLabel:'Browse free stock photos',
-    stockKind:'photo',stockOrient:'landscape'},
+    stockKind:'photo',stockOrient:'landscape',
+    examplePool:['city skyline','aesthetic landscape','nature mountains','studio lights','minimal pattern','concert stage']},
   avatar:{r:1,sizes:[[750,750],[1500,1500]],labels:['750×750','1500×1500'],mp4:false,accept:'image/*',
     specs:['1 : 1','750 × 750','JPEG · PNG','Round crop'],
     specsLbl:['Shape','Min size','Formats','Display'],
@@ -1047,7 +1057,8 @@ const FMTS={
     dropHint:'Drop a photo — we crop to a 1:1 square',
     dropExt:'JPG · PNG · WEBP',
     stockLabel:'Browse free stock photos',
-    stockKind:'photo',stockOrient:'square'},
+    stockKind:'photo',stockOrient:'square',
+    examplePool:['portrait studio','minimal portrait','artist headshot','aesthetic profile','abstract square','neon portrait']},
   cover:{r:1,sizes:[[1600,1600],[3000,3000]],labels:['1600×1600','3000×3000'],mp4:false,accept:'image/*',
     specs:['1 : 1','3000 × 3000','JPEG · PNG','sRGB'],
     specsLbl:['Shape','Ideal','Formats','Color space'],
@@ -1055,7 +1066,8 @@ const FMTS={
     dropHint:'Drop a photo — we crop to a 1:1 square',
     dropExt:'JPG · PNG · WEBP',
     stockLabel:'Browse free stock photos',
-    stockKind:'photo',stockOrient:'square'},
+    stockKind:'photo',stockOrient:'square',
+    examplePool:['aesthetic abstract','minimal artwork','vintage texture','geometric pattern','neon abstract','cosmic']},
 };
 
 function updQualityNote(){
@@ -1135,18 +1147,10 @@ function setFmt(f){
 }
 
 const PREV_CFG={
-  canvas:{cls:'preview-frame--canvas',eyebrow:'9 : 16',title:'Canvas',phoneBar:true,
-          fmt:'Canvas MP4',aspect:'9 : 16',len:'3 – 8 s',codec:'H.264',
-          checklist:['Local encode','Seamless loop','sRGB · clean edges']},
-  header:{cls:'preview-frame--header',eyebrow:'2660 × 1140',title:'Header',phoneBar:false,
-          fmt:'Header JPEG',aspect:'7 : 3',len:'Static',codec:'JPEG q.98',
-          checklist:['Lower-left clear','sRGB','Local encode']},
-  avatar:{cls:'preview-frame--avatar',eyebrow:'1 : 1',title:'Avatar',phoneBar:false,
-          fmt:'Avatar JPEG',aspect:'1 : 1',len:'Static',codec:'JPEG q.98',
-          checklist:['Circle-safe centre','sRGB','Local encode']},
-  cover:{cls:'preview-frame--cover',eyebrow:'1 : 1',title:'Cover Art',phoneBar:false,
-         fmt:'Cover JPEG',aspect:'1 : 1',len:'Static',codec:'JPEG q.98',
-         checklist:['3000 × 3000','sRGB','Local encode']}
+  canvas:{cls:'preview-frame--canvas',eyebrow:'9 : 16',title:'Canvas',phoneBar:true},
+  header:{cls:'preview-frame--header',eyebrow:'2660 × 1140',title:'Header',phoneBar:false},
+  avatar:{cls:'preview-frame--avatar',eyebrow:'1 : 1',title:'Avatar',phoneBar:false},
+  cover:{cls:'preview-frame--cover',eyebrow:'1 : 1',title:'Cover Art',phoneBar:false}
 };
 function updPreviewPanel(f){
   const c=PREV_CFG[f];if(!c)return;
@@ -1154,14 +1158,6 @@ function updPreviewPanel(f){
   const pb=$('#previewPhoneBar');if(pb)pb.style.display=c.phoneBar?'':'none';
   const eb=$('#previewEyebrow');if(eb)eb.textContent=c.eyebrow;
   const tt=$('#previewTitle');if(tt)tt.textContent=c.title;
-  const ef=$('#esFmt');if(ef)ef.textContent=c.fmt;
-  const ea=$('#esAspect');if(ea)ea.textContent=c.aspect;
-  const el=$('#esLen');if(el)el.textContent=c.len;
-  const ec=$('#esCodec');if(ec)ec.textContent=c.codec;
-  const cl=$('#checklist');
-  if(cl){
-    cl.innerHTML=c.checklist.map(t=>`<span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> ${t}</span>`).join('');
-  }
 }
 document.querySelectorAll('.fmt').forEach(b=>{b.onclick=()=>setFmt(b.dataset.fmt)});
 
@@ -1551,9 +1547,13 @@ if(_rep)_rep.onclick=()=>fi.click();
 const _cropX=document.getElementById('cropX');
 if(_cropX)_cropX.onclick=()=>$('#rst').click();
 
-// LAZY Spotify embed — load iframe only when user explicitly asks
+
+// LAZY Spotify embed — load iframe only when user explicitly clicks.
+// Click on placeholder replaces the entire .player-card content with just
+// the iframe — the .player-head also disappears, leaving only the compact player.
 const _ph=document.getElementById('creatorEmbedPh');
-if(_ph)_ph.onclick=()=>{
+function _loadCreatorEmbed(){
+  if(!_ph||!_ph.parentElement)return;
   const slot=_ph.parentElement;
   const f=document.createElement('iframe');
   f.className='creator-embed';
@@ -1562,7 +1562,11 @@ if(_ph)_ph.onclick=()=>{
   f.setAttribute('allow','autoplay; clipboard-write; encrypted-media; picture-in-picture');
   f.title='Anton Zinoviev on Spotify';
   slot.innerHTML='';slot.appendChild(f);
-};
+}
+if(_ph){
+  _ph.onclick=_loadCreatorEmbed;
+  _ph.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();_loadCreatorEmbed()}};
+}
 
 // ============ PEXELS STOCK BROWSER ============
 const PEXELS_KEY='rnUwVdkZ9AZk79hIoTaIT7SKxc5nT2AJPttRG4HQI2cAlZ4eWJ6IlUS0';
@@ -1867,6 +1871,60 @@ document.querySelectorAll('.qb').forEach(b=>{
     updQualityNote();
   };
 });
+
+// "Surprise me" — picks a random query from the format's examplePool,
+// fetches Pexels page 1 (random order), grabs the first item, loads it directly.
+const _useEx=document.getElementById('useExample');
+if(_useEx){
+  _useEx.onclick=async()=>{
+    const d=FMTS[curFmt];
+    const pool=d.examplePool||['aesthetic'];
+    const q=pool[Math.floor(Math.random()*pool.length)];
+    const orient=d.stockOrient||'portrait';
+    const isVideo=d.stockKind==='video';
+    const lbl=$('#useExampleLabel'),orig=lbl?lbl.textContent:'';
+    if(lbl)lbl.textContent='Loading…';
+    _useEx.disabled=true;
+    try{
+      const url=isVideo
+        ?`https://api.pexels.com/videos/search?query=${encodeURIComponent(q)}&orientation=${orient}&size=medium&per_page=20&page=${Math.floor(Math.random()*3)+1}`
+        :`https://api.pexels.com/v1/search?query=${encodeURIComponent(q)}&orientation=${orient}&per_page=20&page=${Math.floor(Math.random()*3)+1}`;
+      const r=await fetch(url,{headers:{Authorization:PEXELS_KEY}});
+      if(!r.ok)throw new Error('Pexels '+r.status);
+      const j=await r.json();
+      const items=isVideo?(j.videos||[]):(j.photos||[]);
+      if(!items.length)throw new Error('no results');
+      const pick=items[Math.floor(Math.random()*items.length)];
+      // Use the same path as Pexels modal "Use this →"
+      let mediaUrl,photog;
+      if(isVideo){
+        // Find the largest H.264 mp4 file
+        const files=(pick.video_files||[]).filter(f=>f.file_type==='video/mp4').sort((a,b)=>(b.width||0)-(a.width||0));
+        const best=files[0];if(!best)throw new Error('no mp4');
+        mediaUrl=best.link;photog=pick.user&&pick.user.name;
+      } else {
+        mediaUrl=pick.src&&(pick.src.large2x||pick.src.large||pick.src.original);
+        photog=pick.photographer;
+      }
+      if(!mediaUrl)throw new Error('no media url');
+      const blob=await(await fetch(mediaUrl)).blob();
+      const ext=isVideo?'mp4':'jpg';
+      const file=new File([blob],`pexels-example.${ext}`,{type:blob.type||(isVideo?'video/mp4':'image/jpeg')});
+      // Display chip with photographer credit (matches Pexels-modal flow)
+      const ws=$('#wsSource'),wt=$('#wsSourceText');
+      if(ws&&wt&&photog){wt.textContent=`Pexels: ${photog}`;ws.classList.remove('hidden')}
+      // Hand to existing handler
+      handle(file);
+    }catch(e){
+      console.warn('useExample failed:',e);
+      if(lbl)lbl.textContent='Try again';
+      setTimeout(()=>{if(lbl)lbl.textContent=orig},1600);
+    }finally{
+      _useEx.disabled=false;
+      if(lbl&&lbl.textContent==='Loading…')lbl.textContent=orig;
+    }
+  };
+}
 </script>
 
 </body>
